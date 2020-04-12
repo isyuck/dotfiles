@@ -1,0 +1,29 @@
+* {
+        background-color: #151515;
+        text-color:       #5f5f87;
+        highlight: none;
+}
+
+#window {
+        width:    20%;
+        children: [ horibox ];
+}
+
+#horibox {
+        orientation: horizontal;
+        children:  [ entry, listview ];
+}
+
+#listview {
+        layout:  horizontal;
+        spacing: 10px;
+}
+
+#entry {
+        expand: false;
+        width:  5em;
+}
+
+#element selected {
+        text-color: #afafd7;
+}

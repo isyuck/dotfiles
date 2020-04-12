@@ -1,0 +1,71 @@
+[colors]
+background     = #00222222
+foreground     = #afafd7
+foreground-alt = #5f5f87
+alert          = #d7875f
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/bottom]
+monitor             = ${env:MONITOR:}
+width               = 100%
+height              = 65
+fixed-center        = true
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+padding-left        = 8
+padding-right       = 8
+module-margin-left  = 0
+module-margin-right = 8
+wm-restack          = bspwm
+font-0              = fxd:pixelsize=8;-8
+font-1              = siji:pixelsize=10;-8
+modules-left        = cpu memory
+modules-center      = pulseaudio
+modules-right       = date
+bottom              = true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/date]
+type                     = internal/date
+interval                 = 25.0
+date                     = %A, %B %d
+format-prefix            = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/cpu]
+type                     = internal/cpu
+interval                 = 1
+format-prefix            = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/memory]
+type                     = internal/memory
+interval                 = 1
+label                    = %mb_used%/%mb_free%
+format-prefix            = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/pulseaudio]
+type                            = internal/pulseaudio
+format-volume                   = <bar-volume>
+bar-volume-width                = 28
+bar-volume-foreground-0         = ${colors.foreground}
+bar-volume-foreground-1         = ${colors.foreground}
+bar-volume-foreground-2         = ${colors.foreground}
+bar-volume-foreground-3         = ${colors.foreground}
+bar-volume-foreground-4         = ${colors.foreground}
+bar-volume-foreground-5         = ${colors.alert}
+bar-volume-foreground-6         = #ff5555
+bar-volume-gradient             = true
+bar-volume-indicator            = +
+bar-volume-indicator-foreground = ${colors.foreground}
+bar-volume-fill                 = -
+bar-volume-empty                = -
+bar-volume-empty-foreground     = ${colors.foreground-alt}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[settings]
+screenchange-reload = true
