@@ -8,13 +8,20 @@ sxhkd &
 compton &
 dunst &
 unclutter &
-./.config/polybar/startall.sh
 hsetroot -solid '#151515' &
 xrdb .Xresources
 
-bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
-# bspc monitor eDP-1 -d 8 9
-# bspc monitor HDMI-1 -d 1 2 3 4 5 6 7
+# use only laptop screen if its the only active monitor
+# this could do with some better conditions
+if [ $(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l) -eq 1 ];
+then
+        bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+else
+        bspc monitor eDP-1 -d 8 9
+        bspc monitor HDMI-1 -d 1 2 3 4 5 6 7
+fi
+
+./.config/polybar/startall.sh
 
 bspc config border_width 1
 bspc config window_gap   20
@@ -39,4 +46,4 @@ bspc rule -a feh state=floating
 bspc rule -a URxvt state=pseudo_tiled center=true rectangle=550x350+0+0
 bspc rule -a qjackctl state=floating center=true rectangle=750x500+0+0
 bspc rule -a qutebrowser state=fullscreen
-bspc rule -a firefox state=fullscreen
+bspc rule -a firefox-esr state=fullscreen
