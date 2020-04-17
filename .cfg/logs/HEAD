@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 c9b052cbf9196363a911f785dd9faedbb5150b11 isyuck <kaazification@gmail.com> 1586698354 +0100	commit (initial): init
-c9b052cbf9196363a911f785dd9faedbb5150b11 45514402b7035d15207c537d130c736d0f9607fb isyuck <kaazification@gmail.com> 1586699481 +0100	commit: add image
-45514402b7035d15207c537d130c736d0f9607fb 0ca057019f9ee064bf09b786a003d03409c36e4b isyuck <kaazification@gmail.com> 1586798979 +0100	commit: workspace distribution is now dependent on number of connected monitors
-0ca057019f9ee064bf09b786a003d03409c36e4b 5b459b32f17ca1ec4851c45f97d061104d212a98 isyuck <kaazification@gmail.com> 1586799019 +0100	pull: Merge made by the 'recursive' strategy.
