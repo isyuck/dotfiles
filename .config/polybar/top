@@ -1,5 +1,5 @@
 [colors]
-background     = #00222222
+background     = #151515
 foreground     = #afafd7
 foreground-alt = #5f5f87
 alert          = #d7875f
@@ -8,20 +8,20 @@ alert          = #d7875f
 [bar/top]
 monitor             = ${env:MONITOR:}
 width               = 100%
-height              = 65
+height              = 32
 fixed-center        = true
 background          = ${colors.background}
 foreground          = ${colors.foreground}
-padding-left        = 8
-padding-right       = 8
-module-margin-left  = 0
-module-margin-right = 8
+padding-left        = 2
+padding-right       = 2
+module-margin-left  = 4
+module-margin-right = 4
 wm-restack          = bspwm
-font-0              = fxd:pixelsize=8;8
-font-1              = siji:pixelsize=10;8
+font-0              = fxd:pixelsize=8;3
+font-1              = siji:pixelsize=8;2
 modules-left        = network
 modules-center      = bspwm
-modules-right       = battery date
+modules-right       = battery time
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/bspwm]
@@ -32,7 +32,7 @@ label-occupied            = 
 label-occupied-foreground = ${colors.foreground-alt}
 label-occupied-padding    = 2
 label-urgent              = 
-label-urgent-background   = ${colors.alert}
+label-urgent-foreground   = ${colors.alert}
 label-urgent-padding      = 2
 label-empty               = 
 label-empty-foreground    = ${colors.foreground-alt}
@@ -40,7 +40,7 @@ label-empty-padding       = 2
 pin-workspaces = true
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/date]
+[module/time]
 type                     = internal/date
 interval                 = 1
 time                     = " %H:%M"

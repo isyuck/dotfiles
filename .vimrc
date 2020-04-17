@@ -8,6 +8,7 @@ Plug 'mhinz/vim-startify'
 Plug 'beyondmarc/glsl.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/goyo.vim'
 Plug 'chrisbra/Colorizer'
 
 call plug#end()
@@ -58,12 +59,13 @@ set smarttab
 set hidden
 set smartcase
 set nobackup
+set fillchars=vert:.
+set nowrap
+set shell=/bin/fish
 
 let g:clang_library_path='/lib/llvm-7/lib/libclang.so.1'
 let g:glsl_file_extensions = '*.glsl,*.vsh,*.fsh,*.vert,*.tesc,*.tese,*.geom,*.frag,*.comp'
 
-set fillchars=vert:.
-set nowrap
 
 filetype plugin on
 

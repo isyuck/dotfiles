@@ -5,4 +5,3 @@ dunst &
 
 # notify-send -u critical "example critical"
 notify-send -u normal "example normal"
-notify-send -u low "example low"

@@ -2,6 +2,9 @@
 # wm independent hotkeys
 #
 
+mod4 + y
+        scrot
+        
 # notify test
 mod4 + u
        exec ~/.config/dunst/testnotify.sh
@@ -13,11 +16,31 @@ mod4 + Return
 
 # program launcher
 mod4 + @space
-        rofi -show run -font "fxd 8" -location 2 -theme ~/.config/substrata.rasi -yoffset 31 
+        rofi -show run -font "fxd 8" -location 2 -theme ~/.config/substrata.rasi -yoffset 10 
 
 # make sxhkd reload its configuration files:
 mod4 + Escape
 	pkill -USR1 -x sxhkd
+
+# alsa updown
+XF86Audio{Raise,Lower}Volume
+    amixer -c 1 set Master {4%+,4%-} 
+
+# alsa mute toggle
+XF86AudioMute
+    amixer -c 1 set Master toggle
+
+# mpd next prev
+XF86Audio{Next,Prev}
+        mpc {next,prev}
+
+# mpd pause (no XF86??)
+Pause
+        mpc {pause,play}
+
+# open terminal with ncmpcpp open
+XF86Calculator
+        urxvt -e ncmpcpp
 
 #
 # bspwm hotkeys

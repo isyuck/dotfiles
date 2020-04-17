@@ -1,0 +1,28 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   .config/vifm/colors/Default.vifm
+#	new file:   .config/vifm/colors/substrata.vifm
+#	new file:   .config/vifm/scripts/README
+#	new file:   .config/vifm/vifm-help.txt
+#	new file:   .config/vifm/vifminfo
+#	new file:   .config/vifm/vifmrc
+#
+# Changes not staged for commit:
+#	modified:   .config/bspwm/bspwmrc
+#	modified:   .config/dunst/dunstrc
+#	modified:   .config/dunst/testnotify.sh
+#	modified:   .config/fish/config.fish
+#	modified:   .config/fish/fish_variables
+#	modified:   .config/polybar/bottom
+#	modified:   .config/polybar/top
+#	modified:   .config/sxhkd/sxhkdrc
+#	modified:   .vimrc
+#	deleted:    README.md
+#
+# Untracked files not listed

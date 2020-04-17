@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x0-0+0"
+    geometry = "500x500-250+10"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -51,13 +51,13 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 0
+    separator_height = 1
 
     # Padding between text and separator.
-    padding = 1
+    padding = 0
 
     # Horizontal padding.
-    horizontal_padding = 1
+    horizontal_padding = 0
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -82,7 +82,7 @@
     # Set to 0 to disable.
     # A client can set the 'transient' hint to bypass this. See the rules
     # section for how to disable this if necessary
-    idle_threshold = 120
+    idle_threshold = 0
 
     ### Text ###
 
@@ -126,7 +126,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b%a"
+    format = "%a: %s %p"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -147,7 +147,7 @@
 
     # When word_wrap is set to no, specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = yes

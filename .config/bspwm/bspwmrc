@@ -5,7 +5,7 @@ killall compton
 killall unclutter
 
 sxhkd &
-compton &
+compton --respect-prop-shadow &
 dunst &
 unclutter &
 hsetroot -solid '#151515' &
@@ -24,7 +24,7 @@ fi
 ./.config/polybar/startall.sh
 
 bspc config border_width 1
-bspc config window_gap   20
+bspc config window_gap   1
 
 bspc config normal_border_color  "#1c1c1c"
 bspc config focused_border_color "#2c2c2c"
@@ -37,13 +37,11 @@ bspc config focus_follows_pointer true
 bspc config gapless_monocle       false
 
 bspc config top_padding    0
-bspc config left_padding   76
+bspc config left_padding   0
 bspc config bottom_padding 0
-bspc config right_padding  76
+bspc config right_padding  0
 
 # rules
 bspc rule -a feh state=floating
-bspc rule -a URxvt state=pseudo_tiled center=true rectangle=550x350+0+0
+bspc rule -a URxvt state=pseudo_tiled center=true rectangle=650x450+0+0
 bspc rule -a qjackctl state=floating center=true rectangle=750x500+0+0
-bspc rule -a qutebrowser state=fullscreen
-bspc rule -a firefox-esr state=fullscreen
