@@ -1263,7 +1263,7 @@ c.hints.border = '2px solid #afafd7'
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
-c.statusbar.padding = {'top': 11, 'bottom': 0, 'left': 0, 'right': 5}
+c.statusbar.padding = {'top': 6, 'bottom': 1, 'left': 0, 'right': 1}
 
 ## Position of the status bar.
 ## Type: VerticalPosition
@@ -1342,7 +1342,7 @@ c.tabs.last_close = 'startpage'
 ## not apply properly if max_width is smaller than the minimum size of
 ## tab contents, or smaller than tabs.min_width.
 ## Type: Int
-c.tabs.max_width = 12
+c.tabs.max_width = -1
 
 ## Minimum width (in pixels) of tabs (-1 for the default minimum size
 ## behavior). This setting only applies when tabs are horizontal. This
@@ -1391,7 +1391,7 @@ c.tabs.min_width = 12
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 0}
+c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 4, 'right': 4}
 
 ## Force pinned tabs to stay at fixed URL.
 ## Type: Bool
@@ -1442,7 +1442,7 @@ c.tabs.show_switching_delay = 500
 ##   - left
 ##   - right
 ##   - center
-c.tabs.title.alignment = 'center'
+c.tabs.title.alignment = 'left'
 
 ## Format to use for the tab title. The following placeholders are
 ## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
@@ -1456,7 +1456,7 @@ c.tabs.title.alignment = 'center'
 ## `{protocol}`: Protocol (http/https/...) of the current web page. *
 ## `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
-c.tabs.title.format = '{audio}{index}'
+c.tabs.title.format = '{audio}{index} {title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
