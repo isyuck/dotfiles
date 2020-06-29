@@ -18,7 +18,7 @@ mod4 + @space
   rofi -show run -display-run ">" -font "lemon 8" -location 5 -theme ~/.config/isaac.rasi -xoffset -40 -yoffset -40
 
 mod4 + shift + grave
-  /home/isaac/scripts/whatishappening.sh
+  /home/isaac/.local/bin/whatishappening
 
 # make sxhkd reload its configuration files:
 mod4 + Escape
