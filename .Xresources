@@ -1,75 +1,66 @@
-!! Colorscheme
+! These are all possible options, presented with default values.
+! xst will fallback to *.option if st.option is not present.
+! see src/config.h for more information about option meanings.
 
-! special
-*.foreground: #afafd7
-*.background: #1c1c1c
-*.cursorColor: #afafd7
+! These options only take effect on startup.
+st.termname:     st-256color
+! if you do not set shell, precedence is: -e arg, utmp option, SHELL env var, /etc/passwd shell
+st.shell:        /bin/sh
 
-*.color0: #1c1c1c
-*.color8: #afafd7
+! The following options options can be reloaded via USR1 signal.
+st.font:              lemon:pixelsize=8:antialias=true:autohint=true;
+st.borderpx:          20 ! Available cursor values: 2 4 6 7 = █ _ | ☃ ( 1 3 5 are blinking versions)
+st.cursorshape:       2
+! thickness of underline and bar cursors
+st.cursorthickness:   2
+! 0: normal blinking, 1: leave cursor border and blink with cursors background
+st.cursorblinkstyle:  0
+! 0: cursor blinks with a constant interval; 1: blinking cycle resets on key input
+st.cursorblinkontype: 1
+st.bold_font:         0
+st.xfps:              120
+st.actionfps:         30
+! Set to a non-zero value to disable window decorations (titlebar, etc) and go borderless.
+st.borderless:        0
+! Amount of lines scrolled
+st.mouseScrollLines:  1
+! Kerning / character bounding-box height multiplier
+st.chscale:           1.0
+! Kerning / character bounding-box width multiplier
+st.cwscale:           0.5
+! blinking timeout for terminal and cursor blinking (0 disables)
+st.blinktimeout:      500
+! bell volume. Value between -100 and 100. (0 disables)
+st.bellvolume:        100
+! this is a char that is exposed like so: `printf '\033[z'`
+st.prompt_char:       $
+! This option is can be preedit style. Available values: `root` `overthespot` (Default taken `root`)
+st.imstyle:           root
 
-*.color1: #d7875f
-*.color9: #d7875f
-
-*.color2: #5f5f87
-*.color10: #5f5f87
-
-*.color3: #87afd7
-*.color11: #87afd7
-
-*.color4: #af87af
-*.color12: #af87af
-
-*.color5: #5bb955
-*.color13: #5bb955
-
-*.color6: #659ea2
-*.color14: #659ea2
-
-*.color7: #f0ecfe
-*.color15: #f0ecfe
-
-!! URxvt Appearance
-URxvt.font: xft:fxd:style=Regular:size=8
-URxvt.boldFont: xft:fxd:style=Regular:size=8
-URxvt.italicFont: xft:fxd:style=Regular:size=8
-URxvt.boldItalicfont: xft:fxd:style=Regular:size=8
-URxvt.letterSpace: 0
-URxvt.lineSpace: 0
-URxvt.geometry: 92x24
-URxvt.internalBorder: 30
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
-URxvt.saveline: 2048
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
-URxvt.urgentOnBell: true
-URxvt.depth: 24
-URxvt.iso14755: false
-
-!! Common Keybinds for Navigations
-URxvt.keysym.Shift-Up: command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
-URxvt.keysym.Control-Up: \033[1;5A
-URxvt.keysym.Control-Down: \033[1;5B
-URxvt.keysym.Control-Right: \033[1;5C
-URxvt.keysym.Control-Left: \033[1;5D
-
-!! Copy Paste & Other Extensions
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.copyCommand: xclip -i -selection clipboard
-URxvt.pasteCommand: xclip -o -selection clipboard
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.urlLauncher: firefox
-URxvt.underlineURLs: true
-URxvt.urlButton: 1
-
+! opacity==255 means what terminal will be not transparent, 0 - fully transparent
+st.opacity:      255
+! Defaults taken from base16-twilight colorscheme.
+st.foreground:   #efefef
+st.background:   #181818
+st.color0:       #181818
+st.color1:       #cf6a4c
+st.color2:       #8f9d6a
+st.color3:       #f9ee98
+st.color4:       #7587a6
+st.color5:       #9b859d
+st.color6:       #afc4db
+st.color7:       #a7a7a7
+st.color8:       #5f5a60
+st.color9:       #cf6a4c
+st.color10:      #8f9d6a
+st.color11:      #f9ee98
+st.color12:      #7587a6
+st.color13:      #9b859d
+st.color14:      #afc4db
+st.color15:      #ffffff
+st.color16:      #cda869
+st.color17:      #9b703f
+st.color18:      #323537
+st.color19:      #464b50
+st.color20:      #838184
+st.color21:      #c3c3c3
