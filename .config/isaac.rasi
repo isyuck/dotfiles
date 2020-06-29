@@ -1,0 +1,65 @@
+* {
+    foreground:       #ffffff;
+    background:       #181818;
+    foreground-alt:   #585858;
+    highlight: none;
+}
+#window {
+    width:            150px;
+    background-color: @background;
+}
+#mainbox {
+    border:           1;
+    padding:          20;
+    border-color:     @foreground-alt;
+    background-color: @background;
+}
+#textbox {
+    text-color:       @foreground;
+    background-color: @background;
+}
+#listview {
+    spacing:          2px ;
+    padding:          2px 0px 0px ;
+    background-color: @background;
+}
+#element {
+    border:           0;
+    padding:          3px ;
+    text-color:       @foreground;
+    background-color: @background;
+}
+
+#element.selected {
+    background-color: @foreground;
+    text-color:       @background;
+}
+
+#inputbar {
+    padding:    1px ;
+    text-color:       @foreground;
+    background-color: @background;
+}
+
+#entry {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
+}
+#prompt {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: @background;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry];
+    text-color:       @foreground;
+    background-color: @background;
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        "";
+    margin:     0px 0.3em 0em 0em ;
+    text-color:       @foreground;
+    background-color: @background;
+}
