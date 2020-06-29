@@ -3,17 +3,9 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
-foreground = '#d8d8d8' # light purple
-background = '#181818' # black
-color1     = '#181818' # black
-color2     = '#ab4642' # orange
-color3     = '#7cafc2' # light blue
-color4     = '#a1b56c' # green
-color5     = '#ba8baf' # purple
-color6     = '#282828' # dark purple
-color7     = '#86c1b9' # teal
-color8     = '#f8f8f8' # white
-mainFont = '8pt lemon'
+foreground = '#1a1a1a' 
+background = '#c5c0bd'
+grey       = '#686665'
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
@@ -79,27 +71,27 @@ c.colors.completion.even.bg = background
 ## Text color of the completion widget. May be a single color to use for
 ## all columns or a list of three colors, one for each column.
 ## Type: List of QtColor, or QtColor
-c.colors.completion.fg = ['#9292a2', '#9292a2', '#9292a2']
+c.colors.completion.fg = [grey, grey, grey]
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = background
+c.colors.completion.item.selected.bg = foreground
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.bottom = color4
+c.colors.completion.item.selected.border.bottom = foreground
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.item.selected.border.top = color4
+c.colors.completion.item.selected.border.top = foreground
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
-c.colors.completion.item.selected.fg = color4
+c.colors.completion.item.selected.fg = background
 
 ## Foreground color of the matched text in the completion.
 ## Type: QtColor
-c.colors.completion.match.fg = color4
+c.colors.completion.match.fg = foreground
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor
@@ -111,7 +103,7 @@ c.colors.completion.scrollbar.bg = background
 
 ## Color of the scrollbar handle in the completion view.
 ## Type: QssColor
-c.colors.completion.scrollbar.fg = color6
+c.colors.completion.scrollbar.fg = foreground
 
 ## Background color for the download bar.
 ## Type: QssColor
@@ -119,7 +111,7 @@ c.colors.downloads.bar.bg = background
 
 ## Background color for downloads with errors.
 ## Type: QtColor
-c.colors.downloads.error.bg = color2
+c.colors.downloads.error.bg = foreground
 
 ## Foreground color for downloads with errors.
 ## Type: QtColor
@@ -127,7 +119,7 @@ c.colors.downloads.error.fg = foreground
 
 ## Color gradient start for download backgrounds.
 ## Type: QtColor
-c.colors.downloads.start.bg = color4
+c.colors.downloads.start.bg = foreground
 
 ## Color gradient start for download text.
 ## Type: QtColor
@@ -135,7 +127,7 @@ c.colors.downloads.start.fg = background
 
 ## Color gradient stop for download backgrounds.
 ## Type: QtColor
-c.colors.downloads.stop.bg = color4
+c.colors.downloads.stop.bg = foreground
 
 ## Color gradient end for download text.
 ## Type: QtColor
@@ -170,7 +162,7 @@ c.colors.hints.fg = foreground
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-c.colors.hints.match.fg = color4
+c.colors.hints.match.fg = foreground
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -178,11 +170,11 @@ c.colors.keyhint.bg = 'rgba(0, 0, 0, 100%)'
 
 ## Text color for the keyhint widget.
 ## Type: QssColor
-c.colors.keyhint.fg = '#FFFFFF'
+c.colors.keyhint.fg = foreground
 
 ## Highlight color for keys to complete the current keychain.
 ## Type: QssColor
-c.colors.keyhint.suffix.fg = background
+c.colors.keyhint.suffix.fg = foreground
 
 ## Background color of an error message.
 ## Type: QssColor
@@ -190,11 +182,11 @@ c.colors.messages.error.bg = background
 
 ## Border color of an error message.
 ## Type: QssColor
-c.colors.messages.error.border = color2
+c.colors.messages.error.border = foreground
 
 ## Foreground color of an error message.
 ## Type: QssColor
-c.colors.messages.error.fg = color2
+c.colors.messages.error.fg = foreground
 
 ## Background color of an info message.
 ## Type: QssColor
@@ -202,7 +194,7 @@ c.colors.messages.info.bg = background
 
 ## Border color of an info message.
 ## Type: QssColor
-c.colors.messages.info.border = color5
+c.colors.messages.info.border = foreground
 
 ## Foreground color of an info message.
 ## Type: QssColor
@@ -210,11 +202,11 @@ c.colors.messages.info.fg = foreground
 
 ## Background color of a warning message.
 ## Type: QssColor
-c.colors.messages.warning.bg = color2
+c.colors.messages.warning.bg = foreground
 
 ## Border color of a warning message.
 ## Type: QssColor
-c.colors.messages.warning.border = color2
+c.colors.messages.warning.border = foreground
 
 ## Foreground color of a warning message.
 ## Type: QssColor
@@ -238,7 +230,7 @@ c.colors.prompts.fg = foreground
 
 ## Background color of the statusbar in caret mode.
 ## Type: QssColor
-c.colors.statusbar.caret.bg = color5
+c.colors.statusbar.caret.bg = foreground
 
 ## Foreground color of the statusbar in caret mode.
 ## Type: QssColor
@@ -270,7 +262,7 @@ c.colors.statusbar.command.fg = foreground
 
 ## Background color of the statusbar in insert mode.
 ## Type: QssColor
-c.colors.statusbar.insert.bg = color4
+c.colors.statusbar.insert.bg = foreground
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
@@ -302,49 +294,49 @@ c.colors.statusbar.normal.fg = foreground
 
 ## Background color of the progress bar.
 ## Type: QssColor
-c.colors.statusbar.progress.bg = color4
+c.colors.statusbar.progress.bg = foreground
 
 ## Foreground color of the URL in the statusbar on error.
 ## Type: QssColor
-c.colors.statusbar.url.error.fg = color2
+c.colors.statusbar.url.error.fg = foreground
 
 ## Default foreground color of the URL in the statusbar.
 ## Type: QssColor
-c.colors.statusbar.url.fg = color4
+c.colors.statusbar.url.fg = foreground
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
-c.colors.statusbar.url.hover.fg = color7
+c.colors.statusbar.url.hover.fg = foreground
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-c.colors.statusbar.url.success.http.fg = color4
+c.colors.statusbar.url.success.http.fg = foreground
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-c.colors.statusbar.url.success.https.fg = color4
+c.colors.statusbar.url.success.https.fg = foreground
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
-c.colors.statusbar.url.warn.fg = color2
+c.colors.statusbar.url.warn.fg = foreground
 
 ## Background color of the tab bar.
 ## Type: QtColor
-c.colors.tabs.bar.bg = background
+c.colors.tabs.bar.bg = foreground
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.bg = background
+c.colors.tabs.even.bg = foreground
 
 ## Foreground color of unselected even tabs.
 ## Type: QtColor
-c.colors.tabs.even.fg = foreground
+c.colors.tabs.even.fg = background
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
-c.colors.tabs.indicator.error = color2
+c.colors.tabs.indicator.error = foreground
 
 ## Color gradient start for the tab indicator.
 ## Type: QtColor
@@ -365,27 +357,27 @@ c.colors.tabs.indicator.system = 'none'
 
 ## Background color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.bg = background
+c.colors.tabs.odd.bg = foreground
 
 ## Foreground color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.fg = foreground
+c.colors.tabs.odd.fg = background
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.bg = foreground
+c.colors.tabs.selected.even.bg = background
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.fg = background
+c.colors.tabs.selected.even.fg = foreground
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.bg = foreground
+c.colors.tabs.selected.odd.bg = background
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.fg = background
+c.colors.tabs.selected.odd.fg = foreground
 
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
@@ -733,7 +725,7 @@ c.completion.timestamp_format = '%A, %d-%m-%y'
 ## Valid values:
 ##   - system: Use the system wide proxy.
 ##   - none: Don't use any proxy
-# c.content.proxy = 'system'
+c.content.proxy = 'socks://localhost:9050/'
 
 ## Send DNS requests over the configured proxy.
 ## Type: Bool
@@ -840,56 +832,56 @@ c.editor.encoding = 'utf-8'
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = mainFont
+c.fonts.completion.category = '8pt fxd'
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = mainFont
+c.fonts.completion.entry = '8pt fxd'
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = mainFont
+c.fonts.debug_console = '8pt fxd'
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = mainFont
+c.fonts.downloads = '8pt fxd'
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = mainFont
+c.fonts.hints = '8pt fxd'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = mainFont
+c.fonts.keyhint = '8pt fxd'
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = mainFont
+c.fonts.messages.error = '8pt fxd'
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = mainFont
+c.fonts.messages.info = '8pt fxd'
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = mainFont
+c.fonts.messages.warning = '8pt fxd'
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = mainFont
+c.fonts.monospace = '8pt fxd'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = mainFont
+c.fonts.prompts = '8pt fxd'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = mainFont
+c.fonts.statusbar = '8pt fxd'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = mainFont
+c.fonts.tabs = '8pt fxd'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -901,7 +893,7 @@ c.fonts.tabs = mainFont
 
 ## Font family for fixed fonts.
 ## Type: FontFamily
-# c.fonts.web.family.fixed = mainFont
+# c.fonts.web.family.fixed = '8pt fxd'
 
 ## Font family for sans-serif fonts.
 ## Type: FontFamily
@@ -948,7 +940,7 @@ c.fonts.tabs = mainFont
 
 ## CSS border value for hints.
 ## Type: String
-c.hints.border = '2px solid #afafd7'
+c.hints.border = '1px solid #1a1a1a'
 
 ## Characters used for hint strings.
 ## Type: UniqueCharString
@@ -1263,7 +1255,7 @@ c.hints.border = '2px solid #afafd7'
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
-c.statusbar.padding = {'top': 11, 'bottom': 0, 'left': 0, 'right': 5}
+# c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
 
 ## Position of the status bar.
 ## Type: VerticalPosition
@@ -1282,7 +1274,7 @@ c.statusbar.padding = {'top': 11, 'bottom': 0, 'left': 0, 'right': 5}
 ##   - tabs: Current active tab, e.g. `2`.
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
-c.statusbar.widgets = ['url', 'scroll', 'progress', 'keypress']
+# c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
@@ -1334,7 +1326,7 @@ c.tabs.indicator.width = 0
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-c.tabs.last_close = 'startpage'
+# c.tabs.last_close = 'ignore'
 
 ## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
 ## only applies when tabs are horizontal. This setting does not apply to
@@ -1342,14 +1334,14 @@ c.tabs.last_close = 'startpage'
 ## not apply properly if max_width is smaller than the minimum size of
 ## tab contents, or smaller than tabs.min_width.
 ## Type: Int
-c.tabs.max_width = 12
+# c.tabs.max_width = -1
 
 ## Minimum width (in pixels) of tabs (-1 for the default minimum size
 ## behavior). This setting only applies when tabs are horizontal. This
 ## setting does not apply to pinned tabs, unless `tabs.pinned.shrink` is
 ## False.
 ## Type: Int
-c.tabs.min_width = 12
+# c.tabs.min_width = -1
 
 ## When switching tabs, what input mode is applied.
 ## Type: String
@@ -1391,7 +1383,7 @@ c.tabs.min_width = 12
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 0}
+# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
 
 ## Force pinned tabs to stay at fixed URL.
 ## Type: Bool
@@ -1408,7 +1400,7 @@ c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 0}
 ##   - bottom
 ##   - left
 ##   - right
-c.tabs.position = 'top'
+# c.tabs.position = 'top'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
@@ -1425,12 +1417,12 @@ c.tabs.position = 'top'
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'always'
+# c.tabs.show = 'always'
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
 ## Type: Int
-c.tabs.show_switching_delay = 500
+# c.tabs.show_switching_delay = 800
 
 ## Open a new window for every tab.
 ## Type: Bool
@@ -1442,7 +1434,7 @@ c.tabs.show_switching_delay = 500
 ##   - left
 ##   - right
 ##   - center
-c.tabs.title.alignment = 'center'
+# c.tabs.title.alignment = 'left'
 
 ## Format to use for the tab title. The following placeholders are
 ## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
@@ -1456,7 +1448,7 @@ c.tabs.title.alignment = 'center'
 ## `{protocol}`: Protocol (http/https/...) of the current web page. *
 ## `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
-c.tabs.title.format = '{audio}{index}'
+# c.tabs.title.format = '{audio}{index}: {title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
@@ -1466,11 +1458,11 @@ c.tabs.title.format = '{audio}{index}'
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
 ## Type: PercOrInt
-c.tabs.width = 19
+# c.tabs.width = '20%'
 
 ## Wrap when changing tabs.
 ## Type: Bool
-c.tabs.wrap = False
+# c.tabs.wrap = True
 
 ## What search to start when something else than a URL is entered.
 ## Type: String
@@ -1510,8 +1502,7 @@ c.url.default_page = 'https://www.google.co.uk/'
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
-c.url.searchengines = {'DEFAULT': 'https://searx.privatenet.cf/?q={}&categories=general&language=en-GB'}
+c.url.searchengines = {'DEFAULT': 'https://www.google.com/search?q={}'}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
@@ -1529,7 +1520,7 @@ c.url.start_pages = ['http://www.doublepressure.com/']
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
 ## Type: FormatString
-c.window.title_format = '{perc}{title}'
+# c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
 
 ## Default zoom level.
 ## Type: Perc
@@ -1616,8 +1607,8 @@ c.window.title_format = '{perc}{title}'
 # config.bind('F', 'hint all tab')
 # config.bind('G', 'scroll-to-perc')
 # config.bind('H', 'back')
-config.bind('K', 'tab-next')
 config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
 # config.bind('L', 'forward')
 # config.bind('M', 'bookmark-add')
 # config.bind('N', 'search-prev')
@@ -1639,7 +1630,7 @@ config.bind('J', 'tab-prev')
 # config.bind('b', 'set-cmd-text -s :quickmark-load')
 # config.bind('cd', 'download-clear')
 # config.bind('co', 'tab-only')
-config.bind('dd', 'tab-close')
+# config.bind('d', 'tab-close')
 # config.bind('f', 'hint')
 # config.bind('g$', 'tab-focus -1')
 # config.bind('g0', 'tab-focus 1')
