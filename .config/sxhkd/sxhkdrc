@@ -2,21 +2,23 @@
 # wm independent hotkeys
 #
 
-mod4 + y
-        scrot
-        
-# notify test
-mod4 + u
-       exec ~/.config/dunst/testnotify.sh
 
+XF86MonBrightness{Up,Down}
+  brightnessctl set 5{+,-}
 
 # terminal emulator
 mod4 + Return
-	urxvt -e /usr/bin/fish
+  xst -e /usr/bin/zsh
+
+mod4 + u
+  ./.config/dunst/testnotify.sh
 
 # program launcher
 mod4 + @space
-        rofi -show run -font "fxd 8" -location 2 -theme ~/.config/substrata.rasi -yoffset 10 
+  rofi -show run -display-run ">" -font "lemon 8" -location 5 -theme ~/.config/isaac.rasi -xoffset -40 -yoffset -40
+
+mod4 + shift + grave
+  /home/isaac/scripts/whatishappening.sh
 
 # make sxhkd reload its configuration files:
 mod4 + Escape
@@ -40,7 +42,7 @@ Pause
 
 # open terminal with ncmpcpp open
 XF86Calculator
-        urxvt -e ncmpcpp
+        xst -e ncmpcpp
 
 #
 # bspwm hotkeys
@@ -110,8 +112,9 @@ mod4 + {o,i}
 
 # focus or send to the given desktop
 mod4 + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}' 
-
+	bspc {desktop -f,node -d} '^{1-9,10}'
+#   dunstify -r 444 -t 3000 {1-9,0}
+  
 #
 # preselect
 #
