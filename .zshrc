@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='vim'
+export PATH=$PATH:'/home/isaac/.local/bin'
 
 # vi mode
 bindkey -v
