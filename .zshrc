@@ -22,7 +22,7 @@ se() {du -a ~/scripts/ ~/.config | awk '{print $2}' | egrep -v "Brave" | fzf | x
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="cypher"
+ZSH_THEME="af-magic"
 
 # base16 shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
