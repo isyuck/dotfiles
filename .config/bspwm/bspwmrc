@@ -1,6 +1,6 @@
 #! /bin/sh
 killall sxhkd
-killall polybar
+# killall polybar
 killall compton
 killall unclutter
 
@@ -8,40 +8,43 @@ sxhkd &
 compton --respect-prop-shadow &
 dunst &
 unclutter &
-hsetroot -solid '#151515' &
+hsetroot -solid '#121212'
+# feh --bg-fill "/home/isaac/pics/656056.png"
 xrdb .Xresources
 
 # use only laptop screen if its the only active monitor
 # this could do with some better conditions
 if [ $(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l) -eq 1 ];
 then
-        bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
+    bspc monitor eDP-1 -d 1 2 3 4 5
 else
-        bspc monitor eDP-1 -d 8 9
-        bspc monitor HDMI-1 -d 1 2 3 4 5 6 7
+    ./scripts/dadscreen.sh
+    bspc monitor eDP-1 -d 6 7
+    bspc monitor HDMI-1 -d 1 2 3 4 5
 fi
 
-./.config/polybar/startall.sh
+# ./.config/polybar/startall.sh
 
 bspc config border_width 1
-bspc config window_gap   1
+bspc config window_gap   16
 
-bspc config normal_border_color  "#1c1c1c"
-bspc config focused_border_color "#2c2c2c"
+bspc config normal_border_color  "#282828"
+bspc config focused_border_color "#585858"
 
-bspc config presel_feedback_color "#5f5f87"
+bspc config presel_feedback_color "#2e313d"
 
 bspc config split_ratio           0.5
 bspc config borderless_monocle    true
 bspc config focus_follows_pointer true
 bspc config gapless_monocle       false
 
-bspc config top_padding    0
-bspc config left_padding   0
-bspc config bottom_padding 0
-bspc config right_padding  0
+edgepad=4
+bspc config top_padding    $edgepad
+bspc config left_padding   $edgepad
+bspc config bottom_padding $edgepad
+bspc config right_padding  $edgepad
 
 # rules
 bspc rule -a feh state=floating
-bspc rule -a URxvt state=pseudo_tiled center=true rectangle=650x450+0+0
+bspc rule -a st-256color state=pseudo_tiled center=true rectangle=500x350+0+0
 bspc rule -a qjackctl state=floating center=true rectangle=750x500+0+0
