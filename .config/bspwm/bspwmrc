@@ -18,7 +18,7 @@ if [ $(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l) -eq 1 ];
 then
     bspc monitor eDP-1 -d 1 2 3 4 5
 else
-    ./scripts/dadscreen.sh
+    dadscreen
     bspc monitor eDP-1 -d 6 7
     bspc monitor HDMI-1 -d 1 2 3 4 5
 fi
