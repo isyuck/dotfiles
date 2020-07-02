@@ -7,7 +7,16 @@
 
 # hello and datetime
 hellodate="\
-> hello $(whoami), its $(date '+%l:%M%p' | sed 's/ //g') on $(date '+%A, %B %d').
+> hello $(whoami), its $(date '+%l:%M%p' | sed 's/ //g') on $(date '+%A, %B %-d').
+"
+
+# ethereum
+while IFS= read -r line
+do
+  ethgbp=$line
+done < $HOME/.local/bin/wihutils/ethgbp
+ether="
+> 1 ethereum is ~ £${ethgbp}
 "
 
 # cpu and mem
@@ -33,7 +42,7 @@ do
     sunset="$(echo $line | sed 's/.\{3\}$//; s/^0*//')"
   fi
   n=$((n+1))
-done < $HOME/.local/bin/wihweather/weather
+done < $HOME/.local/bin/wihutils/weather
 weather="
 > its ${temp} in plymouth, with ${cond} and winds of ${wind}. \
 the sun will rise at ${sunrise}, and set at ${sunset}.
@@ -92,5 +101,6 @@ ${music}\
 ${weather}\
 ${battery}\
 ${uptime}\
+${ether}\
 ${memcpu}\
 "
