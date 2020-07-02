@@ -1,0 +1,11 @@
+#!/bin/bash
+
+exec > $1
+# 1 eth = x usd
+eth="$(curl -s 'https://api.coincap.io/v2/rates/ethereum' | sed 's/,/\n/g; s/"//g; s/:/ /g; s/}//g' | awk 'FNR == 5 {print $2}')"
+# 1 usd = x gbp
+gbp="$(curl -s 'https://api.exchangeratesapi.io/latest?symbols=USD,GBP&base=USD' | sed 's/,/\n/g; s/"//g; s/:/ /g; s/}//g' | awk 'FNR == 2 {print $2}')"
+
+# this would output incorrectly if eth went above 999.99 gbp or below 99.99 gbp
+# hopefully the first one...!
+echo "$eth * $gbp" | bc -l | sed -r 's/(.{6}).*/\1/'
