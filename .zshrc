@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/isaac/.oh-my-zsh"
-export HISTFILE=~/.config/.zsh_history
+export HISTFILE=~/.config/zsh_history
 
 # isaacs aliases
 alias c='clear'
@@ -17,7 +17,8 @@ alias vo='fzf | xargs -r -I % $EDITOR %;'
 alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
 alias td='task done'
 
-se() {du -a ~/scripts/ ~/.config | awk '{print $2}' | egrep -v "Brave" | fzf | xargs -r $EDITOR ;} 
+se() {du -a ~/.local/bin | awk '{print $2}' | fzf | xargs -r $EDITOR ;} 
+ce() {du -a ~/.config ~/ | awk '{print $2}' | egrep -v "Brave" | fzf | xargs -r $EDITOR ;} 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
