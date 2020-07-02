@@ -2,7 +2,6 @@
 # wm independent hotkeys
 #
 
-
 XF86MonBrightness{Up,Down}
   brightnessctl set 5{+,-}
 
@@ -113,7 +112,7 @@ mod4 + {o,i}
 # focus or send to the given desktop
 mod4 + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-#   dunstify -r 444 -t 3000 {1-9,0}
+#   dunstify -r 444 -t 1000 -u low $(bspc query -D -d --names)
   
 #
 # preselect
