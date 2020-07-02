@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/isaac/.oh-my-zsh"
 export HISTFILE=~/.config/zsh_history
+export FZF_DEFAULT_COMMAND='find .'
 
 # isaacs aliases
 alias c='clear'
@@ -16,6 +17,9 @@ alias ....="cd .. && cd .."
 alias vo='fzf | xargs -r -I % $EDITOR %;'
 alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
 alias td='task done'
+alias p='xsel --output --clipboard'
+alias fcd='cd $(dirname $(fzf))'
+
 
 se() {du -a ~/.local/bin | awk '{print $2}' | fzf | xargs -r $EDITOR ;} 
 ce() {du -a ~/.config ~/ | awk '{print $2}' | egrep -v "Brave" | fzf | xargs -r $EDITOR ;} 
