@@ -8,7 +8,7 @@ st.termname:     st-256color
 st.shell:        /bin/sh
 
 ! The following options options can be reloaded via USR1 signal.
-st.font:              lemon:pixelsize=8:antialias=true:autohint=true;
+st.font:              lemon:pixelsize=8;
 st.borderpx:          20 ! Available cursor values: 2 4 6 7 = █ _ | ☃ ( 1 3 5 are blinking versions)
 st.cursorshape:       2
 ! thickness of underline and bar cursors
