@@ -19,7 +19,7 @@ alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
 alias td='task done'
 alias p='xsel --output --clipboard'
 alias fcd='cd $(dirname $(fzf))'
-
+alias vim='nvim'
 
 se() {du -a ~/.local/bin | awk '{print $2}' | fzf | xargs -r $EDITOR ;} 
 ce() {du -a ~/.config ~/ | awk '{print $2}' | egrep -v "Brave" | fzf | xargs -r $EDITOR ;} 
@@ -106,10 +106,12 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export PATH=$PATH:'/home/isaac/.local/bin'
 
 # vi mode
 bindkey -v
 # include hidden files in autocomplete 
 setopt globdots
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
