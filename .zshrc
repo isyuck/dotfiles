@@ -14,7 +14,6 @@ alias vs='vim src/*'
 alias dots='/usr/bin/git --git-dir=/home/isaac/.cfg/ --work-tree=/home/isaac'
 alias night="sudo shutdown now"
 alias ....="cd .. && cd .."
-alias ve='fzf | xargs -r -I % $EDITOR %;'
 alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
 alias td='task done'
 alias p='xsel --output --clipboard'
@@ -22,7 +21,8 @@ alias fcd='cd $(dirname $(fzf))'
 alias vim='nvim'
 
 se() {du -a ~/.local/bin | awk '{print $2}' | fzf | xargs -r $EDITOR ;} 
-ce() {du -a ~/.config ~/ | awk '{print $2}' | egrep -v "Brave" | fzf | xargs -r $EDITOR ;} 
+ce() {du -a ~/.config | awk '{print $2}' | egrep -v "Brave" | fzf | xargs -r $EDITOR ;} 
+ve() {du -a ~/.config/nvim/ | awk '{print $2}' | egrep -v "plugged" | fzf | xargs -r $EDITOR ;} 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
