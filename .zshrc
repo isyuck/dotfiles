@@ -14,7 +14,7 @@ alias vs='vim src/*'
 alias dots='/usr/bin/git --git-dir=/home/isaac/.cfg/ --work-tree=/home/isaac'
 alias night="sudo shutdown now"
 alias ....="cd .. && cd .."
-alias vo='fzf | xargs -r -I % $EDITOR %;'
+alias ve='fzf | xargs -r -I % $EDITOR %;'
 alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
 alias td='task done'
 alias p='xsel --output --clipboard'
