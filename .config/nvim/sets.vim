@@ -1,5 +1,3 @@
-colo base16-default-dark
-
 set noshowmode
 set backspace=indent,eol,start
 set number
@@ -17,16 +15,10 @@ set fillchars=vert:.
 set nowrap
 set showcmd
 set shell=/bin/zsh
-set t_Co=256
 set termguicolors
 filetype plugin on
 syntax enable
 
-" no end of file tildes
-hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-
-" remove color for splits
-hi VertSplit ctermbg=NONE guibg=NONE
 
 " no netrw banner
 let g:netrw_banner = 0
@@ -60,6 +52,9 @@ let g:clang_library_path='/lib/llvm-7/lib/libclang.so.1'
 " glsl syntax highlighting
 let g:glsl_file_extensions = '*.glsl,*.vsh,*.fsh,*.vert,*.tesc,*.tese,*.geom,*.frag,*.comp'
 
-" set Vim-specific sequences for RGB colors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme base16-default-dark
+
+" no end of file tildes
+hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+" remove color for splits
+hi VertSplit ctermbg=NONE guibg=NONE
