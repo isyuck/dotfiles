@@ -10,10 +10,8 @@ export PG_OF_PATH="/home/isaac/code/of_v0.11.0_linux64gcc6_release"
 # isaacs aliases
 alias c='clear'
 alias q='exit'
-alias gc='git clone'
-alias vs='vim src/*'
-alias dots='/usr/bin/git --git-dir=/home/isaac/.cfg/ --work-tree=/home/isaac'
 alias night="sudo shutdown now"
+alias sdn="sudo shutdown now"
 alias ....="cd .. && cd .."
 alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
 alias td='task done'
@@ -22,7 +20,6 @@ alias fcd='cd $(dirname $(fzf))'
 alias vim='nvim'
 alias re='$(sed "s/.*;//g" $HISTFILE | sort -u | fzf --tac)'
 alias smci='sudo make clean install'
-
 
 # dirs in .config that i'm not interested in
 confingore="Brave|plugged|chromium|discord|unity3d|obs-studio|GIMP|pulse|snippets"
