@@ -1,1 +1,97 @@
-../../.config/polybar/bar-light
+[colors]
+background     = #fafafa
+foreground     = #494b53
+foreground-alt = #5f5f87
+alert          = #d7875f
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[bar/bar]
+monitor             = ${env:MONITOR:}
+width               = 80%
+height              = 41
+offset-x            = 10%
+offset-y            = 25
+fixed-center        = true
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+padding-left        = 5
+padding-right       = 5
+module-margin-left  = 2
+module-margin-right = 2
+font-0              = IBM Plex Mono SemiBold:pixelsize=10;2
+font-1              = icomoon_material_tile:pixelsize=10;3
+modules-left        = title
+modules-center      = dwm
+modules-right       = taskwarrior time
+override-redirect   = false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/dwm]
+type = internal/dwm
+format = <label-tags>
+label-focused = 
+label-unfocused = 
+label-visible = 
+label-empty = 
+
+label-focused-padding = 1
+label-unfocused-padding = 1
+label-visible-padding = 1
+label-empty-padding = 1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/time]
+type                     = internal/date
+interval                 = 25.0
+date                     = %H:%M
+format-prefix            = ""
+format-prefix-foreground = ${colors.foreground-alt}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/date]
+type                     = internal/date
+interval                 = 25.0
+date                     = %A, %B %d
+format-prefix            = ""
+format-prefix-foreground = ${colors.foreground-alt}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/battery]
+type                          = internal/battery
+full-at                       = 75
+battery                       = BAT1
+adapter                       = ACAD
+label-discharging             = %percentage%% -
+label-discharging-foreground  = ${colors.foreground}
+label-charging                = %percentage%% +
+label-charging-foreground     = ${colors.foreground}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/whoami]
+type = custom/script
+exec = echo $(whoami)@$(hostname)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/taskwarrior]
+interval = 30
+type     = custom/script
+exec     = $HOME/.config/polybar/task_polybar.sh
+format   =  <label>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/cpu]
+type     = internal/cpu
+interval = 1
+format-prefix = " "
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/memory]
+type     = internal/memory
+interval = 1
+label    = %gb_used%/%gb_free%
+
+[settings]
+screenchange-reload = true
+
+[module/title]
+type = internal/xwindow

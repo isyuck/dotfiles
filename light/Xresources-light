@@ -1,1 +1,81 @@
-../../.config/lightdark/Xresources-light
+! These are all possible options, presented with default values.
+! xst will fallback to *.option if st.option is not present.
+! see src/config.h for more information about option meanings.
+
+Xft.dpi:   96
+
+! These options only take effect on startup.
+st.termname:     st-256color
+! if you do not set shell, precedence is: -e arg, utmp option, SHELL env var, /etc/passwd shell
+st.shell:        /bin/sh
+
+! The following options options can be reloaded via USR1 signal.
+st.font:              IBM Plex Mono SemiBold:pixelsize=16;
+! st.font:              scientifica:pixelsize=8;
+st.borderpx:          40
+st.cursorshape:       2
+! thickness of underline and bar cursors
+st.cursorthickness:   1
+! 0: normal blinking, 1: leave cursor border and blink with cursors background
+st.cursorblinkstyle:  0
+! 0: cursor blinks with a constant interval; 1: blinking cycle resets on key input
+st.cursorblinkontype: 0
+st.bold_font:         0
+st.xfps:              120
+st.actionfps:         30
+! Set to a non-zero value to disable window decorations (titlebar, etc) and go borderless.
+st.borderless:        0
+! Amount of lines scrolled
+st.mouseScrollLines:  1
+! Kerning / character bounding-box height multiplier
+st.chscale:           1.1
+! Kerning / character bounding-box width multiplier
+st.cwscale:           1.0
+! blinking timeout for terminal and cursor blinking (0 disables)
+st.blinktimeout:      500
+! bell volume. Value between -100 and 100. (0 disables)
+st.bellvolume:        0
+! this is a char that is exposed like so: `printf '\033[z'`
+st.prompt_char:       $
+! This option is can be preedit style. Available values: `root` `overthespot` (Default taken `root`)
+st.imstyle:           root
+
+! opacity==255 means what terminal will be not transparent, 0 - fully transparent
+st.opacity:      255
+
+! special
+*.foreground:   #494b53
+*.background:   #fafafa
+*.cursorColor:  #494b53
+
+! black
+*.color0:       #fafafa
+*.color8:       #fafafa
+
+! red
+*.color1:       #ca1243
+*.color9:       #ca1243
+
+! green
+*.color2:       #50a14f
+*.color10:      #50a14f
+
+! yellow
+*.color3:       #c18401
+*.color11:      #c18401
+
+! blue
+*.color4:       #4078f2
+*.color12:      #4078f2
+
+! magenta
+*.color5:       #a626a4
+*.color13:      #a626a4
+
+! cyan
+*.color6:       #0083be
+*.color14:      #0083be
+
+! white
+*.color7:       #494b53
+*.color15:      #494b53

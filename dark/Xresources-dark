@@ -1,1 +1,82 @@
-../../.config/lightdark/Xresources-dark
+! These are all possible options, presented with default values.
+! xst will fallback to *.option if st.option is not present.
+! see src/config.h for more information about option meanings.
+
+Xft.dpi:   96
+
+! These options only take effect on startup.
+st.termname:     st-256color
+! if you do not set shell, precedence is: -e arg, utmp option, SHELL env var, /etc/passwd shell
+st.shell:        /bin/sh
+
+! The following options options can be reloaded via USR1 signal.
+st.font:              IBM Plex Mono SemiBold:pixelsize=16;
+! st.font:              scientifica:pixelsize=8;
+st.borderpx:          40
+st.cursorshape:       2
+! thickness of underline and bar cursors
+st.cursorthickness:   1
+! 0: normal blinking, 1: leave cursor border and blink with cursors background
+st.cursorblinkstyle:  0
+! 0: cursor blinks with a constant interval; 1: blinking cycle resets on key input
+st.cursorblinkontype: 0
+st.bold_font:         0
+st.xfps:              120
+st.actionfps:         30
+! Set to a non-zero value to disable window decorations (titlebar, etc) and go borderless.
+st.borderless:        0
+! Amount of lines scrolled
+st.mouseScrollLines:  1
+! Kerning / character bounding-box height multiplier
+st.chscale:           1.1
+! Kerning / character bounding-box width multiplier
+st.cwscale:           1.0
+! blinking timeout for terminal and cursor blinking (0 disables)
+st.blinktimeout:      500
+! bell volume. Value between -100 and 100. (0 disables)
+st.bellvolume:        0
+! this is a char that is exposed like so: `printf '\033[z'`
+st.prompt_char:       $
+! This option is can be preedit style. Available values: `root` `overthespot` (Default taken `root`)
+st.imstyle:           root
+
+! opacity==255 means what terminal will be not transparent, 0 - fully transparent
+st.opacity:      255
+
+! special
+*.foreground:   #9da3b0
+*.background:   #282c34
+*.cursorColor:  #dcdfe4
+
+! black
+*.color0:       #282c34
+*.color8:       #282c34
+
+! red
+*.color1:       #e06c75
+*.color9:       #e06c75
+
+! green
+*.color2:       #98c379
+*.color10:      #98c379
+
+! yellow
+*.color3:       #e5c07b
+*.color11:      #e5c07b
+
+! blue
+*.color4:       #61afef
+*.color12:      #61afef
+
+! magenta
+*.color5:       #c678dd
+*.color13:      #c678dd
+
+! cyan
+*.color6:       #56b6c2
+*.color14:      #56b6c2
+
+! white
+*.color7:       #dcdfe4
+*.color15:      #dcdfe4
+
