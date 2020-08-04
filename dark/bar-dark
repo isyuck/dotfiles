@@ -1,14 +1,12 @@
 [colors]
 background     = #282c34
 foreground     = #9da3b0
-foreground-alt = #5f5f87
-alert          = #d7875f
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [bar/bar]
 monitor             = ${env:MONITOR:}
 width               = 80%
-height              = 43
+height              = 41
 offset-x            = 10%
 offset-y            = 25
 fixed-center        = true
@@ -16,80 +14,45 @@ background          = ${colors.background}
 foreground          = ${colors.foreground}
 padding-left        = 5
 padding-right       = 5
-module-margin-left  = 4
-module-margin-right = 4
-; font-0            = scientifica:pixelsize=8;2
+module-margin-left  = 2
+module-margin-right = 2
 font-0              = IBM Plex Mono SemiBold:pixelsize=10;2
-font-1              = siji:pixelsize=10;2
-modules-left        = whoami cpu memory
-modules-center      = title
-modules-right       = taskwarrior date time
+font-1              = icomoon_material_tile:pixelsize=7;3
+modules-left        = title
+modules-center      = dwm
+modules-right       = time
+override-redirect   = false
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/title]
-type = internal/xwindow
+[module/dwm]
+type = internal/dwm
+format = <label-tags>
+label-focused = 
+label-unfocused = 
+label-visible = 
+label-empty = 
+
+label-focused-padding = 1
+label-unfocused-padding = 1
+label-visible-padding = 1
+label-empty-padding = 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/time]
 type                     = internal/date
 interval                 = 25.0
 date                     = %H:%M
-format-prefix            = ""
-format-prefix-foreground = ${colors.foreground-alt}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type                     = internal/date
 interval                 = 25.0
 date                     = %A, %B %d
-format-prefix            = ""
-format-prefix-foreground = ${colors.foreground-alt}
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/whoami]
-type = custom/script
-exec = echo $(whoami)@$(hostname)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/taskwarrior]
-interval = 30
-type = custom/script
-exec = $HOME/.config/polybar/task_polybar.sh
-format = <label> tasks
-format-foreground = ${colors.foreground}
-format-prefix = ""
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/cpu]
-type                     = internal/cpu
-interval                 = 1
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/memory]
-type                     = internal/memory
-interval                 = 1
-label                    = %mb_used%/%mb_free%
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/pulseaudio]
-type                            = internal/pulseaudio
-format-volume                   = <bar-volume>
-bar-volume-width                = 28
-bar-volume-foreground-0         = ${colors.foreground}
-bar-volume-foreground-1         = ${colors.foreground}
-bar-volume-foreground-2         = ${colors.foreground}
-bar-volume-foreground-3         = ${colors.foreground}
-bar-volume-foreground-4         = ${colors.foreground}
-bar-volume-foreground-5         = ${colors.alert}
-bar-volume-foreground-6         = #ff5555
-bar-volume-gradient             = true
-bar-volume-indicator            = +
-bar-volume-indicator-foreground = ${colors.foreground}
-bar-volume-fill                 = -
-bar-volume-empty                = -
-bar-volume-empty-foreground     = ${colors.foreground-alt}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [settings]
 screenchange-reload = true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/title]
+type = internal/xwindow
