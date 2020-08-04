@@ -1,0 +1,46 @@
+# mpd config
+mpd_music_dir = "/home/isaac/music/"
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_crossfade_time = "2"
+
+# ncmpcpp visualizer
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_sync_interval = "15"
+visualizer_in_stereo = "no"
+visualizer_type = "wave"
+visualizer_look = "┃┃"
+
+# header
+header_visibility = "no"
+header_window_color = "default"
+volume_color = "default"
+state_line_color = "black"
+
+# playlist
+playlist_display_mode = "classic"
+song_list_format = {%a - }{%t}|{$8%f$9}$R{     %l}
+now_playing_prefix = " > "
+selected_item_prefix = " * "
+
+# progressbar
+progressbar_look = "-|-"
+progressbar_elapsed_color = 7
+progressbar_color = 9
+
+# statusbar
+statusbar_visibility = "no"
+
+# library
+song_library_format = "{{%t}|{%f}}"
+empty_tag_color = "blue"
+
+# global
+colors_enabled = "yes"
+main_window_color = "default"
+centered_cursor = "yes"
+enable_window_title = "yes"
+external_editor = "nvim"
+mouse_support = "yes"
+user_interface = "classic"
+mouse_list_scroll_whole_page = no
