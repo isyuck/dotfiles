@@ -36,6 +36,4 @@ Plug 'honza/vim-snippets'
 
 Plug 'justinmk/vim-sneak'
 
-Plug 'jiangmiao/auto-pairs'
-
 call plug#end()
