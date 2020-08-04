@@ -30,4 +30,10 @@ hi def link StartifySpecial Function
 hi def link StartifySection Normal 
 
 
+" overrite italic codes
+set t_ZH=^[[3m
+set t_ZR=^[[23m
+
+highlight Comment cterm=italic gui=italic
+
 set background=light

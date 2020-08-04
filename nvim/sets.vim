@@ -76,3 +76,6 @@ let g:glsl_file_extensions = '*.glsl,*.vsh,*.fsh,*.vert,*.tesc,*.tese,*.geom,*.f
 " hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 " remove color for splits
 hi VertSplit ctermbg=NONE guibg=NONE
+
+"
+highlight Comment cterm=italic
