@@ -1,4 +1,4 @@
 colo light 1 &
-picom -b --config $HOME/.config/picom/picom-shadows.conf &
+picom --experimental-backends -b --config $HOME/.config/picom/picom.conf &
 unclutter &
 exec dwm
