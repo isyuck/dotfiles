@@ -11,7 +11,6 @@ st.shell:        /bin/sh
 
 ! The following options options can be reloaded via USR1 signal.
 st.font:              IBM Plex Mono SemiBold:pixelsize=16;
-! st.font:              scientifica:pixelsize=8;
 st.borderpx:          40
 st.cursorshape:       2
 ! thickness of underline and bar cursors
