@@ -8,8 +8,8 @@ alias smi='sudo make install'
 alias smci='sudo make clean install'
 
 # functions to list a group of files, select a file with fzf, then open in $EDITOR
-DOTSDIR="$HOME/dotfiles/"
-SCRIPTSDIR="$DOTSDIR/bin/"
+export DOTSDIR="$HOME/dotfiles"
+export SCRIPTSDIR="$DOTSDIR/bin"
 
 de() # dotfiles edit
     { find $DOTSDIR -type f \

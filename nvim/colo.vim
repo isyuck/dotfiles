@@ -36,4 +36,4 @@ set t_ZR=^[[23m
 
 highlight Comment cterm=italic gui=italic
 
-set background=light
+set background=dark
