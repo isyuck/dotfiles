@@ -29,6 +29,11 @@ hi def link StartifySlash   Normal
 hi def link StartifySpecial Function 
 hi def link StartifySection Normal 
 
+" no end of file tildes
+" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+
+" remove color for splits
+hi VertSplit ctermbg=NONE guibg=NONE
 
 " overrite italic codes
 set t_ZH=^[[3m

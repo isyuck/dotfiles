@@ -72,10 +72,3 @@ let g:clang_library_path='/lib/llvm-7/lib/libclang.so.1'
 " glsl syntax highlighting
 let g:glsl_file_extensions = '*.glsl,*.vsh,*.fsh,*.vert,*.tesc,*.tese,*.geom,*.frag,*.comp'
 
-" no end of file tildes
-" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-" remove color for splits
-hi VertSplit ctermbg=NONE guibg=NONE
-
-"
-highlight Comment cterm=italic
