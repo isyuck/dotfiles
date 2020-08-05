@@ -1,0 +1,56 @@
+#/bin/sh
+
+mode=$1
+
+# set our background colors, also exit out of the
+# script if light or dark hasnt been passed
+if [ $mode = "light" ]; then
+    hsetroot -solid "#cdcdcf" &
+elif [ $mode = "dark" ]; then
+    hsetroot -solid "#1d1d26" &
+else
+    echo "please pass either light, or dark"
+    exit 1
+fi
+
+# this sleep is a hacky solution for mihirlad's 
+# dwm polybar: polybar doesn't recognise dwm.sock
+# until after dwm has loaded, but colo x is 
+# called before dwm in .xinitrc. fix this isaac!
+if [ ! -z "$2" ]; then sleep $2; fi
+
+killall polybar
+# for every xrandr monitor, create an instance of polybar
+if type "xrandr"; then
+    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        MONITOR=$m polybar -q --reload bar -c $DOTSDIR/$mode/bar-$mode &
+    done
+else
+    polybar -q --reload bar &
+fi
+
+# regen xresources file
+xrdb $DOTSDIR/$mode/Xresources-$mode
+
+# for every instance of xst, send the USR1
+# signal to reload xresources
+for pid in $(pidof xst); do 
+    kill -USR1 $pid
+done
+
+# remove the last line of colo.vim
+sed -i '$ d' $HOME/.config/nvim/colo.vim
+# append set background=$mode to the last line of colo.vim
+echo "set background="$mode >> $HOME/.config/nvim/colo.vim
+
+# for every instance of nvim, send the command
+# :set background=$mode
+for instance in $(nvr --serverlist); do
+    nvr -s --nostart --servername $instance \
+    --remote-send ":set background="$mode"<CR>" 
+done
+
+# finally, restart picom (because things can get a little
+# weird if we don't
+killall picom
+picom --experimental-backends -b --config $DOTSDIR/picom.conf &
