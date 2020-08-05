@@ -1,3 +1,3 @@
-colo light 1 &
+colo dark 1 &
 unclutter &
 exec dwm

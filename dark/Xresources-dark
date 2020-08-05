@@ -10,8 +10,9 @@ st.termname:     st-256color
 st.shell:        /bin/sh
 
 ! The following options options can be reloaded via USR1 signal.
-st.font:              IBM Plex Mono SemiBold:pixelsize=16;
-st.borderpx:          40
+! st.font:              IBM Plex Mono SemiBold:pixelsize=16;
+st.font:              scientifica:pixelsize=12;
+st.borderpx:          60
 st.cursorshape:       2
 ! thickness of underline and bar cursors
 st.cursorthickness:   1

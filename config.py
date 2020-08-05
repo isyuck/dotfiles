@@ -13,7 +13,7 @@
 # color6     = '#282828' # dark purple
 # color7     = '#86c1b9' # teal
 # color8     = '#f8f8f8' # white
-mainFont = '11pt IBM Plex Mono SemiBold'
+mainFont = '8pt scientifica'
 
 foreground = '#9da3b0'
 background = '#282c34'
