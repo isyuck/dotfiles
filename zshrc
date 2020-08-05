@@ -1,4 +1,3 @@
-# misc aliases
 alias c='clear'
 alias q='exit'
 alias sdn="sudo shutdown now"
@@ -8,12 +7,27 @@ alias vim='nvim'
 alias smi='sudo make install'
 alias smci='sudo make clean install'
 
-# functions to list a group of files, select a file with fzf,
-# then open in $EDITOR
-# se - dotfiles edit
-se() {du -a ~/.local/bin | awk '{print $2}' | fzf | xargs -r $EDITOR ;} 
-# de - dotfiles edit
-de() {find $HOME/dotfiles | egrep -v git | fzf | xargs -r $EDITOR ;}
+# functions to list a group of files, select a file with fzf, then open in $EDITOR
+DOTSDIR="$HOME/dotfiles/"
+SCRIPTSDIR="$DOTSDIR/bin/"
+
+de() # dotfiles edit
+    { find $DOTSDIR -type f \
+    | egrep -v git \
+    | sed "s#$DOTSDIR##g" \
+    | fzf \
+    | sed "s#^#$DOTSDIR#" \
+    | xargs -r $EDITOR \
+}
+se() # scripts edit
+{
+    find $SCRIPTSDIR -type f \
+    | sed "s#$SCRIPTSDIR##g" \
+    | fzf \
+    | sed "s#^#$SCRIPTSDIR#" \
+    | xargs -r $EDITOR \
+}
+
 
 ZSH_THEME="af-modded"
 plugins=(
