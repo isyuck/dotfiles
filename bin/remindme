@@ -13,12 +13,18 @@ msg=$2
 
 RemindMe() {
     sleep "$1"
-    dunstify "reminder from $1 ago! " "$2"
+    dunstify "$2" "(from $1 ago)"
 }
 
-if [ "$time" = "0" ]; then
+if [ -z "$time" ]; then
     echo "please pass a time greater than 0"
     exit
 fi
+
+if [ -z "$msg" ]; then
+    echo "please pass a non-empty string"
+    exit
+fi
+
 
 RemindMe $time "$msg" &
