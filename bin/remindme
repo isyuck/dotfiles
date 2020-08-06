@@ -1,5 +1,13 @@
 #!/bin/sh 
 
+# send a notification using dunstify, after $1
+# seconds with $2 content.
+# usage: 
+# secs # remindme 30 "make a coffee"
+# mins # remindme 5m "merge develop into master"
+# hrs  # remindme 2h "write some useless scripts"
+# days # remindme 1d "stop writing useless scripts"
+
 time=$1
 msg=$2
 
