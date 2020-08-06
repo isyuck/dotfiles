@@ -50,7 +50,13 @@ for instance in $(nvr --serverlist); do
     --remote-send ":set background="$mode"<CR>" 
 done
 
+killall dunst
+dunst -verbosity crit -config $DOTSDIR/$mode/dunstrc-$mode &
+
 # finally, restart picom (because things can get a little
 # weird if we don't
 killall picom
 picom --experimental-backends -b --config $DOTSDIR/picom.conf &
+
+sleep 0.1
+dunstify "changed to $mode theme"
