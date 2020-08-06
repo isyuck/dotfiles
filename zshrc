@@ -6,6 +6,7 @@ alias td='task done'
 alias vim='nvim'
 alias smi='sudo make install'
 alias smci='sudo make clean install'
+alias bset='brightnessctl set'
 
 # functions to list a group of files, select a file with fzf, then open in $EDITOR
 export DOTSDIR="$HOME/dotfiles"
