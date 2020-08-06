@@ -22,7 +22,7 @@ export SCRIPTSDIR="$DOTSDIR/bin"
 
 de() # dotfiles edit
     { find $DOTSDIR -type f \
-    | egrep -v git \
+    | egrep -v 'git|bin' \
     | sed "s#$DOTSDIR##g" \
     | fzf \
     | sed "s#^#$DOTSDIR#" \
