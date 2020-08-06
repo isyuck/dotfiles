@@ -5,7 +5,7 @@ st.shell:        /usr/bin/zsh
 
 ! st.font:              IBM Plex Mono SemiBold:pixelsize=16;
 st.font:              scientifica:pixelsize=12;
-st.borderpx:          40
+st.borderpx:          30
 st.cursorshape:       2
 st.cursorthickness:   1
 st.cursorblinkstyle:  0
