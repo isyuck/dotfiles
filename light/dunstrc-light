@@ -25,7 +25,7 @@
 
 [frame]
     width = 0
-    color = "#6f798c"
+    color = "#e7e9e1"
 
 [shortcuts]
     close     = mod4+e
