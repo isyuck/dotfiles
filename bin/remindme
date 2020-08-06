@@ -1,0 +1,16 @@
+#!/bin/sh 
+
+time=$1
+msg=$2
+
+RemindMe() {
+    sleep "$1"
+    dunstify "reminder from $1 ago! " "$2"
+}
+
+if [ "$time" = "0" ]; then
+    echo "please pass a time greater than 0"
+    exit
+fi
+
+RemindMe $time "$msg" &
