@@ -20,9 +20,6 @@ set titlestring=%f\ %m
 filetype plugin on
 syntax enable
 
-" auto resize vim with terminal resize
-autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif
-
 let g:startify_custom_header = map(split(system('nvim -v | head -n1 | tr "[:upper:]" "[:lower:]"'), ''), '"   ". v:val') + ['','']
 
 let g:startify_enable_special = 1
