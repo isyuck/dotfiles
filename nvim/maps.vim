@@ -42,10 +42,12 @@ nmap <leader>/ :Lines<CR>
 nmap <leader>t :enew<CR>
 
 " next buffer
-nmap <leader>l :bnext<CR>
+" nmap <leader>l :bnext<CR>
+nmap <Right> :silent bnext<CR>
 
 " previous buffer
-nmap <leader>h :bprevious<CR>
+" nmap <leader>h :bprevious<CR>
+nmap <Left> :bprevious<CR>
 
 " close current buffer; move to the previous one
 nmap <leader>q :bp <BAR> bd #<CR>
