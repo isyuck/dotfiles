@@ -1,64 +1,39 @@
 * {
-    foreground:       #494b53;
-    background:       #fafafa;
-    foreground-alt:   #494b53;
-    highlight: none;
+    text-color:       #000000;
+    background-color: #fafafa;
+    font:             "scientifica 8";
 }
+
 #window {
-    width:            180;
-    background-color: @background;
+    anchor:     north;
+    location:   north;
+    width:      50%;
+    padding:    4px;
+    x-offset: -150px;
+    y-offset: 36px;
+    children:   [ horibox ];
 }
-#mainbox {
-    padding:          20;
-    border-color:     @foreground-alt;
-    background-color: @background;
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
 }
-#textbox {
-    text-color:       @foreground;
-    background-color: @background;
-}
+
 #listview {
-    spacing:          2px ;
-    padding:          2px 0px 0px ;
-    background-color: @background;
-}
-#element {
-    border:           0;
-    padding:          3px ;
-    text-color:       @foreground;
-    background-color: @background;
-}
-
-#element.selected {
-    background-color: @foreground;
-    text-color:       @background;
-}
-
-#inputbar {
-    padding:    1px ;
-    text-color:       @foreground;
-    background-color: @background;
+    layout:     horizontal;
+    spacing:    10px;
+    lines:      5;
 }
 
 #entry {
-    spacing:    0;
-    text-color: @foreground;
-    background-color: @background;
-}
-#prompt {
-    spacing:    0;
-    text-color: @foreground;
-    background-color: @background;
-}
-#inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry];
-    text-color:       @foreground;
-    background-color: @background;
-}
-#textbox-prompt-colon {
     expand:     false;
-    str:        "";
-    margin:     0px 0.3em 0em 0em ;
-    text-color:       @foreground;
-    background-color: @background;
+    width:      10em;
+}
+
+#element {
+    padding: 0px 5px;
+}
+#element selected {
+    text-color: white;
+    background-color: black;
 }
