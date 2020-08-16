@@ -1,5 +1,5 @@
 [global]
-    font                 = "scientifica 8"
+    font                 = "cozette 12"
     allow_markup         = yes
     format               = "%s%b"
     sort                 = no
@@ -9,7 +9,7 @@
     show_age_threshold   = -1
     word_wrap            = no
     ignore_newline       = yes
-    geometry             = "1536x41+192+25"
+    geometry             = "275x200-50+25"
     transparency         = 0
     idle_threshold       = 120
     monitor              = 0
@@ -19,7 +19,7 @@
     separator_height     = 1
     padding              = 15
     horizontal_padding   = 20
-    separator_color      = frame
+    separator_color      = "#aaaaaa"
     startup_notification = false
     browser              = /usr/bin/qutebrowser --target tab
 
@@ -47,3 +47,7 @@
     background = "#fafafa"
     foreground = "#494b53"
     timeout    = 0
+
+[ding]
+    summary = "*"
+    script = ~/.local/bin/ding
