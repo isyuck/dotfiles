@@ -5,6 +5,12 @@ export HISTFILE=~/.config/zsh_history
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='find .'
 export PG_OF_PATH="/home/isaac/code/of_v0.11.0_linux64gcc6_release"
+export BROWSER="qutebrowser"
+# vulkan
+export VULKAN_SDK=~/.local/src/vulkan/1.2.148.1/x86_64
+export PATH=$VULKAN_SDK/bin:$PATH
+export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
+export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 
 alias c='clear'
 alias q='exit'
@@ -15,6 +21,9 @@ alias vim='nvim'
 alias smi='sudo make install'
 alias smci='sudo make clean install'
 alias bset='brightnessctl set'
+alias news='newsboat'
+
+KEYTIMEOUT=1
 
 # functions to list a group of files, select a file with fzf, then open in $EDITOR
 export DOTSDIR="$HOME/dotfiles"
@@ -37,7 +46,7 @@ se() # scripts edit
     | xargs -r $EDITOR \
 }
 
-ZSH_THEME="af-modded"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   gitfast
