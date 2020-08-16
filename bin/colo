@@ -23,7 +23,7 @@ killall polybar
 # for every xrandr monitor, create an instance of polybar
 if type "xrandr"; then
     for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar -q --reload bar -c $DOTSDIR/$mode/bar-$mode &
+        MONITOR=$m polybar -q --reload bar -c $DOTSDIR/polybar &
     done
 else
     polybar -q --reload bar &
