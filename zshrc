@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH="/home/isaac/.oh-my-zsh"
 export PATH=/home/isaac/.local/bin:$PATH
 export PATH=/home/isaac/.cabal/bin:$PATH
@@ -12,6 +19,9 @@ export PATH=$VULKAN_SDK/bin:$PATH
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
 export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 
+# OFF by default: shell editor wm de palette
+export PF_INFO="title os host kernel shell wm de palette"
+
 alias c='clear'
 alias q='exit'
 alias sdn="sudo shutdown now"
@@ -22,8 +32,7 @@ alias smi='sudo make install'
 alias smci='sudo make clean install'
 alias bset='brightnessctl set'
 alias news='newsboat'
-
-KEYTIMEOUT=1
+alias dic='sdcv'
 
 # functions to list a group of files, select a file with fzf, then open in $EDITOR
 export DOTSDIR="$HOME/dotfiles"
@@ -60,3 +69,6 @@ source $ZSH/oh-my-zsh.sh
 setopt globdots
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
