@@ -47,7 +47,3 @@
     background = "#fafafa"
     foreground = "#494b53"
     timeout    = 0
-
-[ding]
-    summary = "*"
-    script = ~/.local/bin/ding
