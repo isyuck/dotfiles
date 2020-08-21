@@ -1561,6 +1561,9 @@ c.window.title_format = '{perc}{title}'
 # c.zoom.text_only = False
 
 ## Bindings for normal mode
+
+config.bind('Y', 'hint links spawn mpv {hint-url}')
+
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
