@@ -1,6 +1,9 @@
 [colors]
-background     = ${xrdb:background}
-foreground     = ${xrdb:foreground}
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+urgent     = ${xrdb:color1}
+focused    = ${xrdb:cursorColor}
+faded      = #aaaaaa
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [bar/bar]
@@ -30,13 +33,20 @@ enable-layout-click     = false
 format                  = <label-tags> <label-layout>
 format-font             = 2
 label-focused           = 
-label-unfocused         = 
-label-visible           = 
+label-unfocused         = 
+label-urgent            = 
+label-visible           = 
 label-empty             = 
 label-focused-padding   = 1
 label-unfocused-padding = 1
+label-urgent-padding    = 1
 label-visible-padding   = 1
 label-empty-padding     = 1
+label-focused-foreground = ${colors.focused}
+label-unfocused-foreground = ${colors.faded}
+label-urgent-foreground = ${colors.urgent}
+label-visible-foreground = ${colors.faded}
+label-empty-foreground = ${colors.faded}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/time]
