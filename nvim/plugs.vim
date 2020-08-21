@@ -10,7 +10,9 @@ Plug 'tidalcycles/vim-tidal'
 
 Plug 'mhinz/vim-startify'
 
-Plug 'beyondmarc/glsl.vim'
+" Plug 'beyondmarc/glsl.vim'
+
+Plug 'tikhomirov/vim-glsl'
 
 Plug 'junegunn/vim-easy-align'
 
