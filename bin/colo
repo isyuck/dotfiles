@@ -57,6 +57,7 @@ dunst -verbosity crit -config $DOTSDIR/$mode/dunstrc-$mode &
 # finally, restart picom (because things can get a little
 # weird if we don't
 killall picom
+sleep 0.1
 picom --experimental-backends -b --config $DOTSDIR/picom.conf &
 
 sleep 0.1
