@@ -7,7 +7,8 @@ mode=$1
 if [ $mode = "light" ]; then
     hsetroot -solid "#cdcdcf" &
 elif [ $mode = "dark" ]; then
-    hsetroot -solid "#1d1d26" &
+    feh --bg-scale $DOTSDIR/wallpaper/Tg9ahSu.jpg
+#     hsetroot -solid "#1d1d26" &
 else
     echo "please pass either light, or dark"
     exit 1
