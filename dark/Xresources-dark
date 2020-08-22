@@ -14,11 +14,13 @@ st.xfps:              120
 st.actionfps:         30
 st.borderless:        0
 st.mouseScrollLines:  1
-st.chscale:           1.1
+st.chscale:           1.05
 st.cwscale:           0.7
 st.blinktimeout:      500
 st.bellvolume:        0
 st.opacity:           255
+
+*.polybackground:   #88282c34
 
 ! special
 *.foreground:   #9da3b0

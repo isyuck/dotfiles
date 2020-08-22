@@ -20,6 +20,8 @@ st.blinktimeout:      500
 st.bellvolume:        0
 st.opacity:           255
 
+*.polybackground:   #88fafafa
+
 ! special
 *.foreground:   #494b53
 *.background:   #fafafa
