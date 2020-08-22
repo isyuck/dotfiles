@@ -1,5 +1,5 @@
 [colors]
-background = ${xrdb:background}
+background = ${xrdb:polybackground}
 foreground = ${xrdb:foreground}
 urgent     = ${xrdb:color1}
 focused    = ${xrdb:cursorColor}
