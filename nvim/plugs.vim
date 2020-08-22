@@ -10,6 +10,8 @@ Plug 'tidalcycles/vim-tidal'
 
 Plug 'mhinz/vim-startify'
 
+Plug 'Yggdroot/indentLine'
+
 " Plug 'beyondmarc/glsl.vim'
 
 Plug 'tikhomirov/vim-glsl'

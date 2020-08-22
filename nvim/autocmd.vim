@@ -3,6 +3,8 @@ autocmd VimEnter * Goyo
 " exit vim when exiting goyo
 autocmd! User GoyoLeave q
 
+autocmd VimEnter * IndentLinesEnable
+
 " auto comment filetypes and comment types
 autocmd FileType c,cpp,java,js,scala let b:comment_leader = '// '
 autocmd FileType sh,ruby,python      let b:comment_leader = '# '

@@ -20,6 +20,9 @@ set titlestring=%f\ %m
 filetype plugin on
 syntax enable
 
+let g:indentLine_enabled = 1
+let g:indentLine_setColors = 0
+
 let g:startify_custom_header = map(split(system('nvim -v | head -n1 | tr "[:upper:]" "[:lower:]"'), ''), '"   ". v:val') + ['','']
 
 let g:startify_enable_special = 1
