@@ -1,16 +1,16 @@
 * {
-    text-color:       #000000;
-    background-color: #fafafa;
-    font:             "scientifica 8";
+    text-color:       #9da3b0;
+    background-color: argb:00000000;
+    font:             "cozette 12";
 }
 
 #window {
     anchor:     north;
     location:   north;
     width:      50%;
-    padding:    4px;
+    padding:    13px;
     x-offset: -150px;
-    y-offset: 36px;
+    y-offset: 26px;
     children:   [ horibox ];
 }
 
@@ -22,7 +22,7 @@
 #listview {
     layout:     horizontal;
     spacing:    10px;
-    lines:      5;
+    lines:      18;
 }
 
 #entry {
@@ -34,6 +34,5 @@
     padding: 0px 5px;
 }
 #element selected {
-    text-color: white;
-    background-color: black;
+    text-color: #e06c75;
 }
