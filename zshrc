@@ -54,6 +54,12 @@ se() # scripts edit
     | sed "s#^#$SCRIPTSDIR#" \
     | xargs -r $EDITOR \
 }
+ve() # vim edit (recursive in current dir)
+    { find . -type f \
+    | egrep -v 'git' \
+    | fzf \
+    | xargs -r $EDITOR \
+}
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
