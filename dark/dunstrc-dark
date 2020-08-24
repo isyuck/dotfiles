@@ -10,7 +10,7 @@
     word_wrap            = no
     ignore_newline       = yes
     geometry             = "275x200-50+25"
-    transparency         = 0
+    transparency         = 1
     idle_threshold       = 120
     monitor              = 0
     follow               = keyboard
@@ -19,7 +19,7 @@
     separator_height     = 1
     padding              = 15
     horizontal_padding   = 20
-    separator_color      = "#aaaaaa"
+    separator_color      = "#aaaaaa00"
     startup_notification = false
     browser              = /usr/bin/qutebrowser --target tab
 
@@ -34,16 +34,16 @@
     context   = mod4+shift+i
 
 [urgency_low]
-    background = "#282c34"
+    background = "#282c3488"
     foreground = "#9da3b0"
     timeout    = 0
 
 [urgency_normal]
-    background = "#282c34"
+    background = "#282c3488"
     foreground = "#9da3b0"
     timeout    = 0
 
 [urgency_critical]
-    background = "#282c34"
+    background = "#282c3488"
     foreground = "#9da3b0"
     timeout    = 0
