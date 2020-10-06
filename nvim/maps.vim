@@ -13,6 +13,9 @@ endif
 " quick exit
 nnoremap ZQ  :q!<CR>
 
+" goyo
+noremap <silent> <leader>g :Goyo<CR>
+
 let g:AutoPairsShortcutJump = '<S-Tab>'
 
 " auto comment with cc
