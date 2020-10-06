@@ -19,7 +19,7 @@ padding-left        = 5
 padding-right       = 5
 module-margin-left  = 5
 module-margin-right = 5
-font-0              = cozette:pixelsize=8;2
+font-0              = SF Mono:pixelsize=10;2
 font-1              = siji:pixelsize=8;2
 modules-left        = title
 modules-center      = dwm

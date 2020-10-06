@@ -16,8 +16,7 @@ if (empty($TMUX))
   endif
 endif
 
-
-colorscheme one
+colo base16-default-dark
 
 hi def link StartifyBracket Normal 
 hi def link StartifyFooter  Normal 

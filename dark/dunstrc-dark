@@ -1,5 +1,5 @@
 [global]
-    font                 = "cozette 12"
+    font                 = "SF Mono 11"
     allow_markup         = yes
     format               = "%s%b"
     sort                 = no
@@ -34,16 +34,16 @@
     context   = mod4+shift+i
 
 [urgency_low]
-    background = "#282c3488"
-    foreground = "#9da3b0"
+    background = "#18181888"
+    foreground = "#d8d8d8"
     timeout    = 0
 
 [urgency_normal]
-    background = "#282c3488"
-    foreground = "#9da3b0"
+    background = "#18181888"
+    foreground = "#d8d8d8"
     timeout    = 0
 
 [urgency_critical]
-    background = "#282c3488"
-    foreground = "#9da3b0"
+    background = "#18181888"
+    foreground = "#d8d8d8"
     timeout    = 0

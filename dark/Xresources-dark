@@ -3,59 +3,66 @@ Xft.dpi:   96
 st.termname:     st-256color
 st.shell:        /usr/bin/zsh
 
-st.font:              cozette:pixelsize=12;
-st.borderpx:          30
+!st.font:              SF Mono:style=Medium:pixelsize=17;
+st.font:              scientifica:pixelsize=12;
+st.borderpx:          20
 st.cursorshape:       2
 st.cursorthickness:   1
 st.cursorblinkstyle:  0
 st.cursorblinkontype: 0
 st.bold_font:         0
-st.xfps:              120
-st.actionfps:         30
+st.xfps:              1200
+st.actionfps:         120
 st.borderless:        0
 st.mouseScrollLines:  1
-st.chscale:           1.05
-st.cwscale:           0.7
+st.chscale:           1.0
+st.cwscale:           1.0
 st.blinktimeout:      500
 st.bellvolume:        0
 st.opacity:           255
 
-*.polybackground:   #88282c34
+*.polybackground:   #e6181818
 
-! special
-*.foreground:   #9da3b0
-*.background:   #282c34
-*.cursorColor:  #dcdfe4
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
 
-! black
-*.color0:       #282c34
-*.color8:       #282c34
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-! red
-*.color1:       #e06c75
-*.color9:       #e06c75
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-! green
-*.color2:       #98c379
-*.color10:      #98c379
-
-! yellow
-*.color3:       #e5c07b
-*.color11:      #e5c07b
-
-! blue
-*.color4:       #61afef
-*.color12:      #61afef
-
-! magenta
-*.color5:       #c678dd
-*.color13:      #c678dd
-
-! cyan
-*.color6:       #56b6c2
-*.color14:      #56b6c2
-
-! white
-*.color7:       #dcdfe4
-*.color15:      #dcdfe4
+*color8:       base03
+*color9:       base08
+*color10:      base0B
+*color11:      base0A
+*color12:      base0D
+*color13:      base0E
+*color14:      base0C
+*color15:      base07
 
