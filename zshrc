@@ -8,6 +8,7 @@ fi
 export ZSH="/home/isaac/.oh-my-zsh"
 export PATH=/home/isaac/.local/bin:$PATH
 export PATH=/home/isaac/.cabal/bin:$PATH
+export PATH=/home/isaac/.emacs.d/bin:$PATH
 export HISTFILE=~/.config/zsh_history
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='find .'
@@ -25,7 +26,7 @@ export PF_INFO="title os host kernel shell wm de palette"
 alias c='clear'
 alias q='exit'
 alias sdn="sudo shutdown now"
-alias wa='wally ~/downloads/*.hex && rm ~/downloads/*.hex'
+alias wa='wally ~/dl/*.hex && rm ~/dl/*.hex'
 alias td='task done'
 alias vim='nvim'
 alias smi='sudo make install'
@@ -33,6 +34,7 @@ alias smci='sudo make clean install'
 alias bset='brightnessctl set'
 alias news='newsboat'
 alias dic='sdcv'
+alias em='emacs -nw'
 
 # functions to list a group of files, select a file with fzf, then open in $EDITOR
 export DOTSDIR="$HOME/dotfiles"
