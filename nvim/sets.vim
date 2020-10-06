@@ -12,6 +12,7 @@ set smartcase
 set nobackup
 set fillchars=vert:.
 set nowrap
+set so=2
 set showcmd
 set shell=/bin/zsh
 set termguicolors
@@ -22,6 +23,7 @@ syntax enable
 
 let g:indentLine_enabled = 1
 let g:indentLine_setColors = 0
+let g:indentLine_fileTypeExclude = ['haskell']
 
 let g:startify_custom_header = map(split(system('nvim -v | head -n1 | tr "[:upper:]" "[:lower:]"'), ''), '"   ". v:val') + ['','']
 
