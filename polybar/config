@@ -1,0 +1,73 @@
+[colors]
+foreground = #000000
+background = #efefef
+
+[bar/base]
+monitor=${env:MONITOR}
+font-0 = JetBrains Mono:size=13;3
+
+modules-left = bspwm filesystem battery 
+modules-center = title
+modules-right = date
+height = 35
+padding-left = 1
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 2
+foreground = ${colors.foreground}
+background = ${colors.background}
+wm-restack = bspwm
+border-size = 0
+
+[bar/bar0]
+inherit = bar/base
+border-bottom = 1
+border-color = ${colors.foreground}
+
+[bar/bar1]
+inherit = bar/base
+border-bottom = 1
+border-color = ${colors.foreground}
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-foreground = ${colors.foreground}
+
+[module/date]
+type = internal/date
+date = %A, %B %d
+time = %H:%M
+label = %date%  %time%
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state>
+
+label-empty = %index%
+label-occupied = %index%
+label-urgent = %index%
+label-focused = %index%
+
+label-focused-foreground = "#c4b056"
+
+label-separator = " "
+label-separator-padding = 0
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+label-mounted = %mountpoint%: %used%
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[settings]
+screenchange-reload = true
