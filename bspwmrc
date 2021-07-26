@@ -1,0 +1,37 @@
+#! /bin/sh
+
+pgrep -x sxhkd >/dev/null || sxhkd &
+# hsetroot -solid "#000000" &
+hsetroot -center ~/dl/wp4199379.png &
+$HOME/.config/polybar/launch.sh
+
+bspc monitor HDMI1 -d I II III IV V VI VII
+bspc monitor eDP1 -d VIII IX X
+
+# BW=2
+# bspc config border_width $BW
+# bspc config window_gap -$BW
+# for side in top right bottom left ; do
+# 	bspc config ${side}_padding $BW
+# done
+
+bspc config window_gap 16
+
+bspc config split_ratio 0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+
+bspc config normal_border_color "#656077"
+bspc config active_border_color "#6272a4"
+bspc config focused_border_color "#6272a4"
+bspc config presel_feedback_color "#656077"
+
+bspc rule -a '*:*:gloss' state=floating center=true
+bspc rule -a faust01 state=floating center=true
+bspc rule -a Faust01 state=floating center=true
+
+bspc rule -a Emacs desktop='^1' state=tiled
+bspc rule -a Chromium desktop='^2'
+bspc rule -a qutebrowser desktop='^2'
+bspc rule -a discord desktop='^4'
+bspc rule -a spotify desktop='^5'
