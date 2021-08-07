@@ -1,4 +1,4 @@
-# fish_vi_key_bindings
+fish_vi_key_bindings
 
 set -gx LC_ALL en_GB.UTF-8
 set -x LD_LIBRARY_PATH "/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
