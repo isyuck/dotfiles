@@ -1,23 +1,55 @@
 (setq user-full-name "Isaac S"
       user-mail-address "isaac@isaac.ac")
 
-(setq doom-font (font-spec :family "JetBrains Mono" :size 20)
-      doom-variable-pitch-font (font-spec :family "Nimbus Sans" :size 16))
+(setq doom-font (font-spec :family "SF Mono" :size 14)
+      doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 
-(setq doom-theme 'doom-plain)
+(setq doom-theme 'doom-one)
+
+(setq which-key-idle-delay 0.0)
 
 (setq org-directory "~/org/")
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type nil)
+(setq org-hide-emphasis-markers t)
+(font-lock-add-keywords 'org-mode
+                          '(("^ *\\([-]\\) "
+                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
 (add-to-list 'load-path "~/src/Tidal")
 (require 'haskell-mode)
 (require 'tidal)
 
-(map!
- :after tidal-mode-map
- :leader
- :desc "tidal evaluate"
- "e" #'tidal-run-multiple-lines)
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+(and
+  (require 'centered-cursor-mode)
+  (global-centered-cursor-mode +1))
+
+
+(set-docsets! 'cpp-mode "C++")
+(set-docsets! 'haskell-mode "Haskell")
+(after!
+  (setq lsp-haskell-formatting-provider "brittany"))
+
+(require 'evil-multiedit)
+(evil-multiedit-default-keybinds)
+;; Match the word under cursor (i.e. make it an edit region). Consecutive presses will
+;; incrementally add the next unmatched match.
+(define-key evil-normal-state-map (kbd "s-d") 'evil-multiedit-match-and-next)
+;; Match selected region.
+(define-key evil-visual-state-map (kbd "s-d") 'evil-multiedit-match-and-next)
+;; Insert marker at point
+(define-key evil-insert-state-map (kbd "s-d") 'evil-multiedit-toggle-marker-here)
+
+;; Same as M-d but in reverse.
+(define-key evil-normal-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
+(define-key evil-visual-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
+
+;; (map!
+;;  :after tidal-mode-map
+;;  :leader
+;;  :desc "tidal evaluate"
+;;  "e" #'tidal-run-multiple-lines)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
