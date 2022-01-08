@@ -5,11 +5,17 @@
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 
 (setq doom-theme 'doom-one)
-
+(setq display-line-numbers-type nil)
 (setq which-key-idle-delay 0.0)
 
 (setq org-directory "~/org/")
-(setq display-line-numbers-type nil)
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+
+(map! :leader
+      (:prefix-map ("o" . "open")
+       (:prefix ("c" . "org capture")
+        :desc "new" "c" #'org-capture)))
+
 (setq org-hide-emphasis-markers t)
 (font-lock-add-keywords 'org-mode
                           '(("^ *\\([-]\\) "
@@ -24,7 +30,6 @@
 (and
   (require 'centered-cursor-mode)
   (global-centered-cursor-mode +1))
-
 
 (set-docsets! 'cpp-mode "C++")
 (set-docsets! 'haskell-mode "Haskell")
