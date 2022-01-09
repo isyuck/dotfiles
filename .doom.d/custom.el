@@ -23,6 +23,10 @@
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
+ '(safe-local-variable-values
+   '((org-src-preserve-indentation)
+     (eval require 'ox-texinfo+ nil t)
+     (eval require 'ol-info)))
  '(vc-annotate-background "#282c34")
  '(vc-annotate-color-map
    (list

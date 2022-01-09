@@ -10,16 +10,27 @@
 
 (setq org-directory "~/org/")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
-
-(map! :leader
-      (:prefix-map ("o" . "open")
-       (:prefix ("c" . "org capture")
-        :desc "new" "c" #'org-capture)))
+(setq org-roam-directory (file-truename (concat org-directory "/roam")))
 
 (setq org-hide-emphasis-markers t)
 (font-lock-add-keywords 'org-mode
                           '(("^ *\\([-]\\) "
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+(setq org-roam-dailies-directory "daily/")
+(setq org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         "* %?"
+         :target (file+head "%<%Y-%m-%d>.org"
+                            "#+title: %<%Y-%m-%d>\n"))))
+
+(setq org-roam-mode-section-functions
+      (list #'org-roam-backlinks-section
+            #'org-roam-reflinks-section
+            ;; #'org-roam-unlinked-references-section
+            ))
+
+(setq org-roam-completion-everywhere t)
 
 (add-to-list 'load-path "~/src/Tidal")
 (require 'haskell-mode)
