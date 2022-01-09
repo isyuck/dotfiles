@@ -13,9 +13,10 @@ set -x OF_ROOT "/Users/iw/src/openFrameworks_v0.11.2"
 set -x PATH "/Users/iw/.emacs.d/bin:$PATH"
 set -x PATH "/Users/iw/.local/bin:$PATH"
 set -x PATH "/opt/homebrew/opt/llvm/bin:$PATH"
+set -x PATH "/Applications/SuperCollider.app/Contents/MacOS:$PATH"
 set -x LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -x CPPFLAGS -I/opt/homebrew/opt/llvm/include
-set -x PATH "/Applications/SuperCollider.app/Contents/MacOS:$PATH"
+set -x EDITOR vim
 
 set -x P4PORT ssl:ec2-54-241-213-38.us-west-1.compute.amazonaws.com:1666
 set -x P4USER isaac
