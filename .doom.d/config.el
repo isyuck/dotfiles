@@ -32,6 +32,13 @@
 
 (setq org-roam-completion-everywhere t)
 
+;; prefer git-timemachine bindings over evil
+(eval-after-load 'git-timemachine
+  '(progn
+     (evil-make-overriding-map git-timemachine-mode-map 'normal)
+     ;; force update evil keymaps after git-timemachine-mode loaded
+     (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))
+
 (add-to-list 'load-path "~/src/Tidal")
 (require 'haskell-mode)
 (require 'tidal)
