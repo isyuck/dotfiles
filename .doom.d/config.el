@@ -39,6 +39,23 @@
      ;; force update evil keymaps after git-timemachine-mode loaded
      (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps)))
 
+(define-minor-mode git-timemachine-mode
+  "Git Timemachine, feel the wings of history."
+  :init-value nil
+  :lighter " Timemachine"
+  :keymap
+  '(("j" . git-timemachine-show-previous-revision)
+    ("k" . git-timemachine-show-next-revision)
+    ("g" . git-timemachine-show-nth-revision)
+    ("t" . git-timemachine-show-revision-fuzzy)
+    ("q" . git-timemachine-quit)
+    ("w" . git-timemachine-kill-abbreviated-revision)
+    ("W" . git-timemachine-kill-revision)
+    ("b" . git-timemachine-blame)
+    ("c" . git-timemachine-show-commit)
+    ("?" . git-timemachine-help))
+  :group 'git-timemachine)
+
 (add-to-list 'load-path "~/src/Tidal")
 (require 'haskell-mode)
 (require 'tidal)
