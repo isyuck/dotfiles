@@ -63,6 +63,18 @@
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (setq-default fill-column 60)
 
+(defvar +org-capture-work-log-file "work-log.org"
+  "Default target for storing timestamped work log entries.")
+
+(after! org
+  (add-to-list 'org-capture-templates
+               '("w"
+                  "Work Log"
+                  entry
+                  (file+olp+datetree +org-capture-work-log-file)
+                  "* %U %?%i"
+                  :kill-buffer t)))
+
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
 (and
