@@ -60,6 +60,9 @@
 (require 'haskell-mode)
 (require 'tidal)
 
+(add-hook 'text-mode-hook #'auto-fill-mode)
+(setq-default fill-column 60)
+
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
 (and
