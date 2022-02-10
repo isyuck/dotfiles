@@ -4,7 +4,8 @@
 (setq doom-font (font-spec :family "SF Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one)    ;; dark
+;; (setq doom-theme 'doom-homage-white) ;; light
 (setq display-line-numbers-type nil)
 (setq which-key-idle-delay 0.0)
 
@@ -55,6 +56,9 @@
     ("c" . git-timemachine-show-commit)
     ("?" . git-timemachine-help))
   :group 'git-timemachine)
+
+(add-to-list 'load-path "~/dotfiles")
+(require 'auto-dark-emacs)
 
 (add-to-list 'load-path "~/src/Tidal")
 (require 'haskell-mode)
