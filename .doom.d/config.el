@@ -1,37 +1,126 @@
-(setq user-full-name "Isaac S"
+(setq user-full-name "isaac"
       user-mail-address "isaac@isaac.ac")
 
-(setq doom-font (font-spec :family "SF Mono" :size 14)
+(setq doom-font (font-spec :family "SF Mono" :size 13)
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 
-(setq doom-theme 'doom-one)    ;; dark
+;; (setq doom-theme 'doom-one)             ;; dark
 ;; (setq doom-theme 'doom-homage-white) ;; light
-(setq display-line-numbers-type nil)
-(setq which-key-idle-delay 0.0)
+(setq doom-theme 'doom-homage-black)             ;; dark
+(setq doom-themes-enable-bold nil)
 
-(setq org-directory "~/org/")
-(setq org-default-notes-file (concat org-directory "/notes.org"))
-(setq org-roam-directory (file-truename (concat org-directory "/roam")))
+;; Set the padding between lines
+(defvar line-padding 0)
+(defun add-line-padding ()
+  "Add extra padding between lines"
 
-(setq org-hide-emphasis-markers t)
-(font-lock-add-keywords 'org-mode
-                          '(("^ *\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+  ; remove padding overlays if they already exist
+  (let ((overlays (overlays-at (point-min))))
+    (while overlays
+      (let ((overlay (car overlays)))
+        (if (overlay-get overlay 'is-padding-overlay)
+            (delete-overlay overlay)))
+      (setq overlays (cdr overlays))))
 
-(setq org-roam-dailies-directory "daily/")
-(setq org-roam-dailies-capture-templates
-      '(("d" "default" entry
-         "* %?"
-         :target (file+head "%<%Y-%m-%d>.org"
-                            "#+title: %<%Y-%m-%d>\n"))))
+  ; add a new padding overlay
+  (let ((padding-overlay (make-overlay (point-min) (point-max))))
+    (overlay-put padding-overlay 'is-padding-overlay t)
+    (overlay-put padding-overlay 'line-spacing (* .1 line-padding))
+    (overlay-put padding-overlay 'line-height (+ 1 (* .1 line-padding))))
+  (setq mark-active nil))
 
-(setq org-roam-mode-section-functions
-      (list #'org-roam-backlinks-section
-            #'org-roam-reflinks-section
-            ;; #'org-roam-unlinked-references-section
-            ))
+(add-hook 'buffer-list-update-hook 'add-line-padding)
 
-(setq org-roam-completion-everywhere t)
+(use-package org-fancy-priorities
+  :diminish
+  :ensure t
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("A" "B" "C" "D" "E")))
+
+(setq org-agenda-use-time-grid nil)
+
+(setq display-line-numbers-type 'relative
+      which-key-idle-delay 0.0
+      )
+
+(setq org-directory "~/org/"
+      org-agenda-remove-tags t
+      org-hide-emphasis-markers t
+      deft-directory "~/org"
+      org-roam-completion-everywhere t
+      org-ellipsis "..."
+      org-superstar-headline-bullets-list '("•")
+      org-agenda-start-day "+0d" ; today
+      org-agenda-show-inherited-tags t
+      org-agenda-start-with-log-mode nil
+      org-log-done 'time
+      org-startup-folded t
+      org-agenda-start-with-clockreport-mode nil
+      org-clock-persist 'history
+      org-agenda-skip-scheduled-if-done t
+      org-agenda-show-current-time-in-grid nil
+      org-enforce-todo-dependencies t
+      org-agenda-repeating-timestamp-show-all nil
+      org-agenda-scheduled-leaders '(" 0 " "-%d ")
+)
+
+(custom-set-faces! '(org-agenda-clocking :weight bold :underline t :background "black"))
+(defun my/org-match-at-point-p (match)
+  "Return non-nil if headline at point matches MATCH.
+Here MATCH is a match string of the same format used by
+`org-tags-view'."
+  (funcall (cdr (org-make-tags-matcher match))
+           (org-get-todo-state)
+           (org-get-tags-at)
+           (org-reduced-level (org-current-level))))
+
+(defun my/org-agenda-skip-without-match (match)
+  "Skip current headline unless it matches MATCH.
+
+Return nil if headline containing point matches MATCH (which
+should be a match string of the same format used by
+`org-tags-view').  If headline does not match, return the
+position of the next headline in current buffer.
+
+Intended for use with `org-agenda-skip-function', where this will
+skip exactly those headlines that do not match."
+  (save-excursion
+    (unless (org-at-heading-p) (org-back-to-heading))
+    (let ((next-headline (save-excursion
+                           (or (outline-next-heading) (point-max)))))
+      (if (my/org-match-at-point-p match) nil next-headline))))
+
+(setq org-agenda-custom-commands
+      '(
+        ("a" "all" ((agenda "" ((org-agenda-span 1)
+                                (org-agenda-overriding-header "" )
+                                (org-agenda-prefix-format "%-12t %-4T  %s")
+                                (org-agenda-format-date "%a %d %b")
+                                ))) ((org-agenda-compact-blocks t)))
+        ("w" "work" ((agenda "" ((org-agenda-span 1)
+                                (org-agenda-overriding-header "" )
+                                (org-agenda-prefix-format "%-12t %-4T  %s")
+                                (org-agenda-format-date "%a %d %b")
+                                (org-agenda-skip-function '(my/org-agenda-skip-without-match "work"))
+                                ))) ((org-agenda-compact-blocks t)))
+        ("p" "priv" ((agenda "" ((org-agenda-span 1)
+                                (org-agenda-overriding-header "" )
+                                (org-agenda-prefix-format "%-12t %-4T  %s")
+                                (org-agenda-format-date "%a %d %b")
+                                (org-agenda-skip-function '(my/org-agenda-skip-without-match "priv"))
+                                ))) ((org-agenda-compact-blocks t)))
+        ("g" "gold" ((agenda "" ((org-agenda-span 1)
+                                (org-agenda-overriding-header "" )
+                                (org-agenda-prefix-format "%-12t %-4T  %s")
+                                (org-agenda-format-date "%a %d %b")
+                                (org-agenda-skip-function '(my/org-agenda-skip-without-match "gold"))
+                                ))) ((org-agenda-compact-blocks t)))
+       ))
+
+
+
+(org-clock-persistence-insinuate)
 
 ;; prefer git-timemachine bindings over evil
 (eval-after-load 'git-timemachine
@@ -67,17 +156,22 @@
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (setq-default fill-column 60)
 
-(defvar +org-capture-work-log-file "work-log.org"
-  "Default target for storing timestamped work log entries.")
-
-(after! org
-  (add-to-list 'org-capture-templates
-               '("w"
-                  "Work Log"
-                  entry
-                  (file+olp+datetree +org-capture-work-log-file)
-                  "* %U %?%i"
-                  :kill-buffer t)))
+(after! org-capture
+(setq org-capture-templates
+      '(
+        ("w" "work")
+        ("wt" "todo" entry (file+headline "~/org/org.org" "work todos")
+         "* TODO %?\nSCHEDULED: %t\n")
+        ("wm" "meeting" entry (file+headline "~/org/org.org" "work meetings")
+         "* %?\n")
+        ("p" "private")
+        ("pt" "todo" entry (file+headline "~/org/org.org" "private todos")
+         "* TODO %?\nSCHEDULED: %t\n")
+        ("pe" "event" entry (file+headline "~/org/org.org" "private events")
+         "* %?\n")
+        ("pi" "inbox" entry (file+headline "~/org/org.org" "private inbox")
+         "* %?\nfiled at %U\n")
+        )))
 
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
@@ -103,6 +197,26 @@
 ;; Same as M-d but in reverse.
 (define-key evil-normal-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
 (define-key evil-visual-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
+
+(display-time-mode 1)
+(setq display-time-24hr-format 1)
+
+(evil-set-initial-state 'org-agenda-mode 'normal)
+(evil-define-key 'normal org-agenda-mode-map
+  (kbd "<RET>") 'org-agenda-switch-to
+  (kbd "\t") 'org-agenda-goto
+  "s" 'org-agenda-schedule
+  "w" 'org-agenda-week-view
+  "d" 'org-agenda-day-view
+  "t" 'org-agenda-todo
+  "L" 'org-agenda-log-mode
+  "q" 'org-agenda-quit
+  "R" 'org-agenda-clockreport-mode
+  "r" 'org-agenda-redo
+  "[" 'org-agenda-earlier
+  "]" 'org-agenda-later
+  "," 'org-agenda-goto-today
+  )
 
 ;; (map!
 ;;  :after tidal-mode-map

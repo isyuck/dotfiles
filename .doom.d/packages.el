@@ -1,7 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-(package! base16-theme)
+;; (package! base16-theme)
 (package! centered-cursor-mode)
 
 ;; To install a package with Doom you must declare them here and run 'doom sync'
