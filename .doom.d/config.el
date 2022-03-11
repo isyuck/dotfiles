@@ -217,6 +217,8 @@ skip exactly those headlines that do not match."
   "[" 'org-agenda-earlier
   "]" 'org-agenda-later
   "," 'org-agenda-goto-today
+  "i" 'org-agenda-clock-in
+  "o" 'org-agenda-clock-out
   )
 
 ;; (map!
