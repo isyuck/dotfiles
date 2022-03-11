@@ -50,7 +50,7 @@
       deft-directory "~/org"
       org-roam-completion-everywhere t
       org-ellipsis "..."
-      org-superstar-headline-bullets-list '("•")
+      org-superstar-headline-bullets-list '("◦")
       org-agenda-start-day "+0d" ; today
       org-agenda-show-inherited-tags t
       org-agenda-start-with-log-mode nil
@@ -63,6 +63,7 @@
       org-enforce-todo-dependencies t
       org-agenda-repeating-timestamp-show-all nil
       org-agenda-scheduled-leaders '(" 0 " "-%d ")
+      org-deadline-warning-days 30
 )
 
 (custom-set-faces! '(org-agenda-clocking :weight bold :underline t :background "black"))
@@ -95,7 +96,7 @@ skip exactly those headlines that do not match."
       '(
         ("a" "all" ((agenda "" ((org-agenda-span 1)
                                 (org-agenda-overriding-header "" )
-                                (org-agenda-prefix-format "%-12t %-4T  %s")
+                                (org-agenda-prefix-format "%-12t %-4T %s")
                                 (org-agenda-format-date "%a %d %b")
                                 ))) ((org-agenda-compact-blocks t)))
         ("w" "work" ((agenda "" ((org-agenda-span 1)
