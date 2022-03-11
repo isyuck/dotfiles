@@ -207,6 +207,7 @@ skip exactly those headlines that do not match."
   (kbd "<RET>") 'org-agenda-switch-to
   (kbd "\t") 'org-agenda-goto
   "s" 'org-agenda-schedule
+  "A" 'org-agenda-archive
   "w" 'org-agenda-week-view
   "d" 'org-agenda-day-view
   "t" 'org-agenda-todo
