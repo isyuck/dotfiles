@@ -4,41 +4,16 @@
 (setq doom-font (font-spec :family "SF Mono" :size 13)
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 
-;; (setq doom-theme 'doom-one)             ;; dark
-;; (setq doom-theme 'doom-homage-white) ;; light
-(setq doom-theme 'doom-homage-black)             ;; dark
+(setq doom-theme 'doom-homage-black)
 (setq doom-themes-enable-bold nil)
-
-;; Set the padding between lines
-(defvar line-padding 0)
-(defun add-line-padding ()
-  "Add extra padding between lines"
-
-  ; remove padding overlays if they already exist
-  (let ((overlays (overlays-at (point-min))))
-    (while overlays
-      (let ((overlay (car overlays)))
-        (if (overlay-get overlay 'is-padding-overlay)
-            (delete-overlay overlay)))
-      (setq overlays (cdr overlays))))
-
-  ; add a new padding overlay
-  (let ((padding-overlay (make-overlay (point-min) (point-max))))
-    (overlay-put padding-overlay 'is-padding-overlay t)
-    (overlay-put padding-overlay 'line-spacing (* .1 line-padding))
-    (overlay-put padding-overlay 'line-height (+ 1 (* .1 line-padding))))
-  (setq mark-active nil))
-
-(add-hook 'buffer-list-update-hook 'add-line-padding)
 
 (use-package org-fancy-priorities
   :diminish
   :ensure t
   :hook (org-mode . org-fancy-priorities-mode)
   :config
-  (setq org-fancy-priorities-list '("A" "B" "C" "D" "E")))
+  (setq org-fancy-priorities-list '("•" "•" "•")))
 
-(setq org-agenda-use-time-grid nil)
 
 (setq display-line-numbers-type 'relative
       which-key-idle-delay 0.0
@@ -54,6 +29,7 @@
       org-agenda-start-day "+0d" ; today
       org-agenda-show-inherited-tags t
       org-agenda-start-with-log-mode nil
+      org-agenda-use-time-grid nil
       org-log-done 'time
       org-startup-folded t
       org-agenda-start-with-clockreport-mode nil
@@ -62,11 +38,11 @@
       org-agenda-show-current-time-in-grid nil
       org-enforce-todo-dependencies t
       org-agenda-repeating-timestamp-show-all nil
-      org-agenda-scheduled-leaders '(" 0 " "-%d ")
+      org-agenda-scheduled-leaders '(" 0 " "-%-2d")
       org-deadline-warning-days 30
+      org-agenda-deadline-leaders '("" "+%-2d" "-%-2d")
 )
 
-(custom-set-faces! '(org-agenda-clocking :weight bold :underline t :background "black"))
 (defun my/org-match-at-point-p (match)
   "Return non-nil if headline at point matches MATCH.
 Here MATCH is a match string of the same format used by
