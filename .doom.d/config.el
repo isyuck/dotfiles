@@ -68,32 +68,6 @@ skip exactly those headlines that do not match."
                            (or (outline-next-heading) (point-max)))))
       (if (my/org-match-at-point-p match) nil next-headline))))
 
-(setq org-agenda-custom-commands
-      '(
-        ("a" "all" ((agenda "" ((org-agenda-span 1)
-                                (org-agenda-overriding-header "" )
-                                (org-agenda-prefix-format "%-12t %-4T %s")
-                                (org-agenda-format-date "%a %d %b")
-                                ))) ((org-agenda-compact-blocks t)))
-        ("w" "work" ((agenda "" ((org-agenda-span 1)
-                                (org-agenda-overriding-header "" )
-                                (org-agenda-prefix-format "%-12t %-4T  %s")
-                                (org-agenda-format-date "%a %d %b")
-                                (org-agenda-skip-function '(my/org-agenda-skip-without-match "work"))
-                                ))) ((org-agenda-compact-blocks t)))
-        ("p" "priv" ((agenda "" ((org-agenda-span 1)
-                                (org-agenda-overriding-header "" )
-                                (org-agenda-prefix-format "%-12t %-4T  %s")
-                                (org-agenda-format-date "%a %d %b")
-                                (org-agenda-skip-function '(my/org-agenda-skip-without-match "priv"))
-                                ))) ((org-agenda-compact-blocks t)))
-        ("g" "gold" ((agenda "" ((org-agenda-span 1)
-                                (org-agenda-overriding-header "" )
-                                (org-agenda-prefix-format "%-12t %-4T  %s")
-                                (org-agenda-format-date "%a %d %b")
-                                (org-agenda-skip-function '(my/org-agenda-skip-without-match "gold"))
-                                ))) ((org-agenda-compact-blocks t)))
-       ))
 
 
 
@@ -138,17 +112,68 @@ skip exactly those headlines that do not match."
       '(
         ("w" "work")
         ("wt" "todo" entry (file+headline "~/org/org.org" "work todos")
-         "* TODO %?\nSCHEDULED: %t\n")
+         "* TODO [#C] %?\nSCHEDULED: %t\n")
         ("wm" "meeting" entry (file+headline "~/org/org.org" "work meetings")
          "* %?\n")
-        ("p" "private")
+        ("p" "priv")
         ("pt" "todo" entry (file+headline "~/org/org.org" "private todos")
-         "* TODO %?\nSCHEDULED: %t\n")
+         "* TODO [#C] %?\nSCHEDULED: %t\n")
         ("pe" "event" entry (file+headline "~/org/org.org" "private events")
          "* %?\n")
         ("pi" "inbox" entry (file+headline "~/org/org.org" "private inbox")
          "* %?\nfiled at %U\n")
-        )))
+        ))
+)
+
+(after! org-agenda
+    (setq org-agenda-custom-commands
+          '(
+            ("a" "all" ((agenda "" ((org-agenda-span 1)
+                                    (org-agenda-overriding-header "" )
+                                    (org-agenda-prefix-format "%-12t %-4T %s ")
+                                    (org-agenda-format-date "%a %d %b")
+                                    ))) ((org-agenda-compact-blocks t)))
+            ("w" "work" ((agenda "" ((org-agenda-span 1)
+                                    (org-agenda-overriding-header "" )
+                                    (org-agenda-prefix-format "%-12t %-4T %s")
+                                    (org-agenda-format-date "%a %d %b")
+                                    (org-agenda-skip-function '(my/org-agenda-skip-without-match "work"))
+                                    ))) ((org-agenda-compact-blocks t)))
+            ("p" "priv" ((agenda "" ((org-agenda-span 1)
+                                    (org-agenda-overriding-header "" )
+                                    (org-agenda-prefix-format "%-12t %-4T %s")
+                                    (org-agenda-format-date "%a %d %b")
+                                    (org-agenda-skip-function '(my/org-agenda-skip-without-match "priv"))
+                                    ))) ((org-agenda-compact-blocks t)))
+            ("g" "gold" ((agenda "" ((org-agenda-span 1)
+                                    (org-agenda-overriding-header "" )
+                                    (org-agenda-prefix-format "%-12t %-4T %s")
+                                    (org-agenda-format-date "%a %d %b")
+                                    (org-agenda-skip-function '(my/org-agenda-skip-without-match "gold"))
+                                    ))) ((org-agenda-compact-blocks t)))
+          ))
+  (evil-set-initial-state 'org-agenda-mode 'normal)
+  (evil-define-key 'normal org-agenda-mode-map
+          (kbd "<RET>") 'org-agenda-switch-to
+          (kbd "\t") 'org-agenda-goto
+          "s" 'org-agenda-schedule
+          "A" 'org-agenda-archive
+          "w" 'org-agenda-week-view
+          "d" 'org-agenda-day-view
+          "t" 'org-agenda-todo
+          "L" 'org-agenda-log-mode
+          "q" 'org-agenda-quit
+          "R" 'org-agenda-clockreport-mode
+          "r" 'org-agenda-redo
+          "[" 'org-agenda-earlier
+          "]" 'org-agenda-later
+          "," 'org-agenda-goto-today
+          "i" 'org-agenda-clock-in
+          "o" 'org-agenda-clock-out
+          "=" 'org-agenda-priority-up
+          "-" 'org-agenda-priority-down
+        )
+)
 
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
@@ -178,25 +203,6 @@ skip exactly those headlines that do not match."
 (display-time-mode 1)
 (setq display-time-24hr-format 1)
 
-(evil-set-initial-state 'org-agenda-mode 'normal)
-(evil-define-key 'normal org-agenda-mode-map
-  (kbd "<RET>") 'org-agenda-switch-to
-  (kbd "\t") 'org-agenda-goto
-  "s" 'org-agenda-schedule
-  "A" 'org-agenda-archive
-  "w" 'org-agenda-week-view
-  "d" 'org-agenda-day-view
-  "t" 'org-agenda-todo
-  "L" 'org-agenda-log-mode
-  "q" 'org-agenda-quit
-  "R" 'org-agenda-clockreport-mode
-  "r" 'org-agenda-redo
-  "[" 'org-agenda-earlier
-  "]" 'org-agenda-later
-  "," 'org-agenda-goto-today
-  "i" 'org-agenda-clock-in
-  "o" 'org-agenda-clock-out
-  )
 
 ;; (map!
 ;;  :after tidal-mode-map
