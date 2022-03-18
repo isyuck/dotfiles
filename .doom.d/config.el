@@ -4,7 +4,6 @@
 (setq doom-font (font-spec :family "SF Mono" :size 13)
       doom-variable-pitch-font (font-spec :family "Helvetica" :size 14))
 
-(setq doom-theme 'doom-homage-black)
 (setq doom-themes-enable-bold nil)
 
 (use-package org-fancy-priorities
@@ -205,6 +204,8 @@ skip exactly those headlines that do not match."
 (display-time-mode 1)
 (setq display-time-24hr-format 1)
 
+(require 'epa-file)
+(epa-file-enable)
 
 ;; (map!
 ;;  :after tidal-mode-map

@@ -31,7 +31,7 @@
   "The theme to enable when dark-mode is active"
   :group 'auto-dark-emacs)
 
-(defcustom auto-dark-emacs/light-theme 'doom-homage-white
+(defcustom auto-dark-emacs/light-theme 'doom-one-light
   "The theme to enable when dark-mode is inactive"
   :group 'auto-dark-emacs)
 
