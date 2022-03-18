@@ -122,6 +122,8 @@ skip exactly those headlines that do not match."
          "* %?\n")
         ("pi" "inbox" entry (file+headline "~/org/org.org" "private inbox")
          "* %?\nfiled at %U\n")
+        ("d" "drill" entry (file"~/org/drill.org")
+         "* card :drill:\n:PROPERTIES:\n:DRILL_CARD_TYPE: twosided\n:END:\n** front\n%?\n** back")
         ))
 )
 
