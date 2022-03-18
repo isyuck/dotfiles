@@ -4,6 +4,7 @@
 ;; (package! base16-theme)
 (package! centered-cursor-mode)
 (package! org-drill)
+(package! exec-path-from-shell)
 
 ;; To install a package with Doom you must declare them here and run 'doom sync'
 ;; on the command line, then restart Emacs for the changes to take effect -- or

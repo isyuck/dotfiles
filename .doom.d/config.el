@@ -207,6 +207,9 @@ skip exactly those headlines that do not match."
 (require 'epa-file)
 (epa-file-enable)
 
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 ;; (map!
 ;;  :after tidal-mode-map
 ;;  :leader
