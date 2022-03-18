@@ -8,6 +8,7 @@ set -x PATH "/Users/iw/.emacs.d/bin:$PATH"
 set -x PATH "/Users/iw/.local/bin:$PATH"
 set -x PATH "/opt/homebrew/opt/llvm/bin:$PATH"
 set -x PATH "/Applications/SuperCollider.app/Contents/MacOS:$PATH"
+set -x PATH "/Users/iw/.cargo/bin:$PATH"
 set -x LDFLAGS -L/opt/homebrew/opt/llvm/lib
 set -x CPPFLAGS -I/opt/homebrew/opt/llvm/include
 set -x EDITOR vim
