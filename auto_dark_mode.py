@@ -14,7 +14,7 @@ async def main(connection):
             if "dark" in parts:
                 preset = await iterm2.ColorPreset.async_get(connection, "3024 Day")
             else:
-                preset = await iterm2.ColorPreset.async_get(connection, "Doom One")
+                preset = await iterm2.ColorPreset.async_get(connection, "DoomOne")
 
             # Update the list of all profiles and iterate over them.
             profiles=await iterm2.PartialProfile.async_query(connection)
