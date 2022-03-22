@@ -123,6 +123,8 @@ skip exactly those headlines that do not match."
          "* %?\nfiled at %U\n")
         ("d" "drill" entry (file"~/org/drill.org")
          "* card :drill:\n:PROPERTIES:\n:DRILL_CARD_TYPE: twosided\n:END:\n** front\n%?\n** back")
+        ("m" "working memory" entry (file+headline "~/org/org.org" "working memory")
+         "* %U %?\n")
         ))
 )
 
