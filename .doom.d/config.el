@@ -168,8 +168,7 @@ skip exactly those headlines that do not match."
 
 (set-docsets! 'cpp-mode "C++")
 (set-docsets! 'haskell-mode "Haskell")
-(after!
-  (setq lsp-haskell-formatting-provider "brittany"))
+(after! 'haskell-mode (setq lsp-haskell-formatting-provider "brittany"))
 
 (require 'evil-multiedit)
 (evil-multiedit-default-keybinds)
