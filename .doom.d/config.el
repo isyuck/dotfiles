@@ -193,14 +193,6 @@ skip exactly those headlines that do not match."
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-(use-package org-wild-notifier
-  :after org-agenda alert
-  :custom
-  (alert-default-style 'osx-notifier)
-  (org-wild-notifier-keyword-whitelist nil)
-  (org-wild-notifier-alert-time '(45 15 5 1))
-  :init (org-wild-notifier-mode t))
-
 ;; (map!
 ;;  :after tidal-mode-map
 ;;  :leader
