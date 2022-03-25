@@ -18,6 +18,7 @@
       which-key-idle-delay 0.0
       )
 
+;; org
 (setq org-directory "~/org/"
       org-agenda-remove-tags t
       org-hide-emphasis-markers t
@@ -67,9 +68,6 @@ skip exactly those headlines that do not match."
                            (or (outline-next-heading) (point-max)))))
       (if (my/org-match-at-point-p match) nil next-headline))))
 
-
-
-
 (org-clock-persistence-insinuate)
 
 ;; prefer git-timemachine bindings over evil
@@ -110,21 +108,19 @@ skip exactly those headlines that do not match."
 (setq org-capture-templates
       '(
         ("w" "work")
-        ("wt" "todo" entry (file+headline "~/org/org.org" "work todos")
-         "* TODO [#C] %?\nSCHEDULED: %t\n")
-        ("wm" "meeting" entry (file+headline "~/org/org.org" "work meetings")
-         "* %?\n")
-        ("p" "priv")
-        ("pt" "todo" entry (file+headline "~/org/org.org" "private todos")
-         "* TODO [#C] %?\nSCHEDULED: %t\n")
-        ("pe" "event" entry (file+headline "~/org/org.org" "private events")
-         "* %?\n")
-        ("pi" "inbox" entry (file+headline "~/org/org.org" "private inbox")
+        ("wt" "todo" entry (file+headline "~/org/work.org" "task list")
+         "* TODO [#C] %? :none:\nSCHEDULED: %t\n")
+        ("wm" "meeting" entry (file+headline "~/org/work.org" "meetings")
+         "* %? :none:\n")
+        ("wc" "capture" entry (file+headline "~/org/work.org" "capture")
          "* %?\nfiled at %U\n")
-        ("d" "drill" entry (file"~/org/drill.org")
-         "* card :drill:\n:PROPERTIES:\n:DRILL_CARD_TYPE: twosided\n:END:\n** front\n%?\n** back")
-        ("m" "working memory" entry (file+headline "~/org/org.org" "working memory")
-         "* %U %?\n")
+        ("p" "priv")
+        ("pt" "todo" entry (file+headline "~/org/priv.org" "task list")
+         "* TODO [#C] %? :none:\nSCHEDULED: %t\n")
+        ("pe" "event" entry (file+headline "~/org/priv.org" "events")
+         "* %? :none:\n")
+        ("pc" "capture" entry (file+headline "~/org/priv.org" "capture")
+         "* %?\nfiled at %U\n")
         ))
 )
 
@@ -133,7 +129,7 @@ skip exactly those headlines that do not match."
           '(
             ("a" "all" ((agenda "" ((org-agenda-span 1)
                                     (org-agenda-overriding-header "" )
-                                    (org-agenda-prefix-format "%-11t%s ")
+                                    (org-agenda-prefix-format "%-11t%s %c %T ")
                                     (org-agenda-format-date "%A %d %B")
                                     ))) ((org-agenda-compact-blocks t)))
           ))
