@@ -108,7 +108,7 @@ skip exactly those headlines that do not match."
 (setq org-capture-templates
       '(
         ("w" "work")
-        ("wt" "todo" entry (file+headline "~/org/work.org" "task list")
+        ("wt" "todo" entry (file+headline "~/org/work.org" "backlog")
          "* TODO [#C] %? :none:\nSCHEDULED: %t\n")
         ("wm" "meeting" entry (file+headline "~/org/work.org" "meetings")
          "* %? :none:\n")
@@ -127,10 +127,15 @@ skip exactly those headlines that do not match."
 (after! org-agenda
     (setq org-agenda-custom-commands
           '(
-            ("a" "all" ((agenda "" ((org-agenda-span 1)
+            ("w" "work" ((agenda "" ((org-agenda-span 1)
                                     (org-agenda-overriding-header "" )
-                                    (org-agenda-prefix-format "%-11t%s %c %T ")
-                                    (org-agenda-format-date "%A %d %B")
+                                    (org-agenda-prefix-format "%s %c %T ")
+                                    (org-agenda-category-filter-preset '("+work"))
+                                    ))) ((org-agenda-compact-blocks t)))
+            ("p" "priv" ((agenda "" ((org-agenda-span 1)
+                                    (org-agenda-overriding-header "" )
+                                    (org-agenda-prefix-format "%s %c %T ")
+                                    (org-agenda-category-filter-preset '("+priv"))
                                     ))) ((org-agenda-compact-blocks t)))
           ))
   (evil-set-initial-state 'org-agenda-mode 'normal)
@@ -151,7 +156,7 @@ skip exactly those headlines that do not match."
           "," 'org-agenda-goto-today
           "i" 'org-agenda-clock-in
           "o" 'org-agenda-clock-out
-          "=" 'org-agenda-priority-up
+          "+" 'org-agenda-priority-up
           "-" 'org-agenda-priority-down
         )
 )
@@ -179,9 +184,6 @@ skip exactly those headlines that do not match."
 ;; Same as M-d but in reverse.
 (define-key evil-normal-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
 (define-key evil-visual-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
-
-(display-time-mode 1)
-(setq display-time-24hr-format 1)
 
 (require 'epa-file)
 (epa-file-enable)

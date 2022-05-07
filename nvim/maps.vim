@@ -10,6 +10,8 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+let mapleader = " "
+
 " quick exit
 nnoremap ZQ  :q!<CR>
 
@@ -18,10 +20,10 @@ noremap <silent> <leader>g :Goyo<CR>
 
 let g:AutoPairsShortcutJump = '<S-Tab>'
 
-" auto comment with cc
-noremap <silent> \cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+" auto comment with gc
+noremap <silent> gc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 " auto uncomment with cc
-noremap <silent> \cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> gu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " align selection in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

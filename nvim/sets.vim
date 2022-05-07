@@ -1,7 +1,7 @@
 set noshowmode
 set backspace=indent,eol,start
-set number
-set relativenumber
+"set number
+"set relativenumber
 set signcolumn=no
 set tabstop=4
 set shiftwidth=4
@@ -12,12 +12,13 @@ set smartcase
 set nobackup
 set fillchars=vert:.
 set nowrap
-set so=2
+set so=999
 set showcmd
-set shell=/bin/zsh
+set shell=/opt/homebrew/bin/fish
 set termguicolors
 set title
 set titlestring=%f\ %m
+set clipboard=unnamed "use system clipboard
 filetype plugin on
 syntax enable
 
