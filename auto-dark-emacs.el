@@ -27,7 +27,7 @@
 
 ;;; Code:
 
-(defcustom auto-dark-emacs/dark-theme 'doom-one
+(defcustom auto-dark-emacs/dark-theme 'modus-vivendi
   "The theme to enable when dark-mode is active"
   :group 'auto-dark-emacs)
 

@@ -98,8 +98,8 @@ skip exactly those headlines that do not match."
 (require 'auto-dark-emacs)
 
 (add-to-list 'load-path "~/src/Tidal")
-(require 'haskell-mode)
-(require 'tidal)
+;; (require 'haskell-mode)
+;; (require 'tidal)
 
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (setq-default fill-column 60)
@@ -171,19 +171,19 @@ skip exactly those headlines that do not match."
 (set-docsets! 'haskell-mode "Haskell")
 (after! 'haskell-mode (setq lsp-haskell-formatting-provider "brittany"))
 
-(require 'evil-multiedit)
-(evil-multiedit-default-keybinds)
-;; Match the word under cursor (i.e. make it an edit region). Consecutive presses will
-;; incrementally add the next unmatched match.
-(define-key evil-normal-state-map (kbd "s-d") 'evil-multiedit-match-and-next)
-;; Match selected region.
-(define-key evil-visual-state-map (kbd "s-d") 'evil-multiedit-match-and-next)
-;; Insert marker at point
-(define-key evil-insert-state-map (kbd "s-d") 'evil-multiedit-toggle-marker-here)
+;; (require 'evil-multiedit)
+;; (evil-multiedit-default-keybinds)
+;; ;; Match the word under cursor (i.e. make it an edit region). Consecutive presses will
+;; ;; incrementally add the next unmatched match.
+;; (define-key evil-normal-state-map (kbd "s-d") 'evil-multiedit-match-and-next)
+;; ;; Match selected region.
+;; (define-key evil-visual-state-map (kbd "s-d") 'evil-multiedit-match-and-next)
+;; ;; Insert marker at point
+;; (define-key evil-insert-state-map (kbd "s-d") 'evil-multiedit-toggle-marker-here)
 
-;; Same as M-d but in reverse.
-(define-key evil-normal-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
-(define-key evil-visual-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
+;; ;; Same as M-d but in reverse.
+;; (define-key evil-normal-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
+;; (define-key evil-visual-state-map (kbd "s-D") 'evil-multiedit-match-and-prev)
 
 (require 'epa-file)
 (epa-file-enable)
