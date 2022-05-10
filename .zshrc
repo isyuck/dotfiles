@@ -4,8 +4,6 @@ export EDITOR='vim'
 path+=("$HOME/.emacs.d/bin")
 export PATH
 
-source ~/src/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
 plugins=(
     git
     vi-mode
