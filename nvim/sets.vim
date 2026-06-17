@@ -1,7 +1,7 @@
 set noshowmode
 set backspace=indent,eol,start
-"set number
-"set relativenumber
+set number
+set relativenumber
 set signcolumn=no
 set tabstop=4
 set shiftwidth=4
@@ -14,7 +14,7 @@ set fillchars=vert:.
 set nowrap
 set so=999
 set showcmd
-set shell=/opt/homebrew/bin/fish
+set shell=/bin/zsh
 set termguicolors
 set title
 set titlestring=%f\ %m
@@ -48,7 +48,6 @@ let g:startify_list_order = [
 let g:goyo_width = 100
 let g:goyo_linenr = 1
 
-" tidalvim without tmux
 let g:tidal_target = "terminal"
 
 " no netrw banner

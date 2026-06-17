@@ -35,7 +35,7 @@ nmap ga <Plug>(EasyAlign)
 nmap <leader>cp :.w !xsel -b<CR>
 
 " open new file through fzf
-nmap <leader>e :Files<CR>
+nmap <leader>f :Files<CR>
 
 " go to buffer through fzf
 nmap <leader>b :Buffers<CR>

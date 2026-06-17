@@ -32,4 +32,6 @@ Plug 'honza/vim-snippets'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'nvim-orgmode/orgmode'
+
 call plug#end()
