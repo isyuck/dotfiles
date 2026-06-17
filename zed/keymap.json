@@ -1,0 +1,123 @@
+[
+    {
+        "context": "(Workspace && !Terminal)",
+        "bindings": {},
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-/": "agent::Toggle",
+            // "shift-enter": [
+            //     "task::Spawn",
+            //     {
+            //         "task_name": "Tidal: Evaluate Paragraph"
+            //     }
+            // ],
+            // "shift-alt-enter": [
+            //     "task::Spawn",
+            //     {
+            //         "task_name": "Tidal: Evaluate Selection"
+            //     }
+            // ],
+            // "ctrl-.": [
+            //     "task::Spawn",
+            //     {
+            //         "task_name": "Tidal: Hush"
+            //     }
+            // ]
+        },
+    },
+    {
+        "context": "AgentPanel",
+        "bindings": {
+            "escape": "agent::ToggleFocus",
+        },
+    },
+    {
+        "context": "Workspace && os == macos",
+        "bindings": {
+            "cmd-/": "agent::ToggleFocus",
+            "cmd-p": "command_palette::Toggle",
+        },
+    },
+    {
+        "context": "Editor && VimControl",
+        "bindings": {
+            "g u": "editor::FindAllReferences"
+        }
+    },
+    {
+        "context": "(VimControl && !menu)",
+        "bindings": {
+            "g e": "editor::Hover",
+            "g i": "editor::Hover",
+            "space e": "editor::GoToDiagnostic",
+            "g b": "git::Blame",
+        },
+    },
+    {
+        "context": "Editor",
+        "bindings": {
+            "cmd-.": null,
+        },
+    },
+    {
+        "bindings": {
+            "cmd-l": "project_panel::Toggle",
+            "cmd-g": "git_panel::Toggle",
+            "cmd-shift-r": "debugger::Start",
+            "cmd-.": "file_finder::Toggle",
+            "cmd-r": "task::Spawn",
+            "cmd-'": "git::CheckoutBranch"
+        },
+    },
+    {
+        "context": "Editor",
+        "unbind": {
+            "cmd-'": "editor::ToggleSelectedDiffHunks"
+        }
+    },
+    {
+        "bindings": {
+            "cmd-;": "git_graph::Open"
+        }
+    },
+    {
+        "context": "Editor",
+        "unbind": {
+            "cmd-d": [
+                "editor::SelectNext",
+                {
+                    "replace_newest": false
+                }
+            ]
+        }
+    },
+    {
+        "context": "Terminal",
+        "unbind": {
+            "cmd-d": "pane::SplitRight"
+        }
+    },
+    {
+        "context": "ProjectPanel",
+        "unbind": {
+            "cmd-d": "project_panel::Duplicate"
+        }
+    },
+    {
+        "bindings": {
+            "cmd-d": "git::BranchDiff"
+        }
+    },
+    {
+        "bindings": {
+            "cmd-m": "workspace::ToggleZoom"
+        }
+    },
+    {
+        "unbind": {
+            "shift-escape": "workspace::ToggleZoom"
+        }
+    }
+]

@@ -1,3 +1,8 @@
 .DS_Store
 karabiner/automatic_backups/*
 .zshrc.local
+zed/.tmp*
+zed/embeddings
+zed/themes
+zed/prompts/
+zed/settings_backup.json
