@@ -1,7 +1,7 @@
 .DS_Store
-dot_config/private_karabiner/automatic_backups/
-dot_zshrc.local
+README.md
+dot_config/private_karabiner/automatic_backups
 dot_config/zed/.tmp*
 dot_config/zed/embeddings
-dot_config/zed/prompts/
+dot_config/zed/prompts
 dot_config/zed/settings_backup.json

@@ -4,32 +4,43 @@ export PATH="/Users/iw/.opencode/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
 
+export HOMEBREW_NO_ENV_HINTS=1
+
 export EDITOR="zed --wait"
 export VISUAL="zed --wait"
 
+export JJ_EDITOR="zed --wait"
+
 export ZSH="$HOME/.oh-my-zsh"
+
+export GLAB_PAGER=cat
 
 plugins=(
     git
-    vi-mode
-    adb
     copypath
     fzf
     npm
+    nvm
     rust
     stack
     screen
+    uv
     zsh-autosuggestions
-    conda-zsh-completion
 )
 
 zstyle ':omz:update' mode reminder
 ZSH_THEME="gentoo"
 COMPLETION_WAITING_DOTS="true"
 
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
-alias q="exit"
+# TMOUT=1
+# function _prompt_refresh() { zle && zle reset-prompt }
+# TRAPALRM() { _prompt_refresh; }
+
+alias q=¬"exit"
 alias c="clear"
 alias gc="git clone"
 alias gs="git status"
@@ -37,7 +48,11 @@ alias m="make"
 alias mr="make run"
 alias sdn="shutdown -P now"
 alias ll="ls -al"
+zstyle ':vcs_info:*' enable NONE
+
+alias gl=glab
 alias tidy="/opt/homebrew/bin/tidy"
+alias mymrs='glab mr list --author @me --output=json | jq -r '"'"'.[] | "!\(.iid)\n\(if .draft then "draft" else .detailed_merge_status end)\n\(.title)\n\(.web_url)", ""'"'"
 alias vim="nvim"
 
 alias lightbg="osascript -e 'tell application \"System Events\" to set picture of every desktop to \"/Users/iw/Pictures/backgrounds/white.png\"'"
@@ -45,8 +60,7 @@ alias darkbg="osascript -e 'tell application \"System Events\" to set picture of
 
 fpath+=~/.zfunc
 
-autoload -Uz compinit
-compinit
+autoload -U compinit; compinit
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -65,10 +79,15 @@ unset __conda_setup
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-. "$HOME/.local/bin/env"
-
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+export PATH="$HOME/.local/bin:$PATH"
+
+export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
+
+source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+
+bindkey -e

@@ -40,21 +40,7 @@
             "cmd-p": "command_palette::Toggle",
         },
     },
-    {
-        "context": "Editor && VimControl",
-        "bindings": {
-            "g u": "editor::FindAllReferences"
-        }
-    },
-    {
-        "context": "(VimControl && !menu)",
-        "bindings": {
-            "g e": "editor::Hover",
-            "g i": "editor::Hover",
-            "space e": "editor::GoToDiagnostic",
-            "g b": "git::Blame",
-        },
-    },
+
     {
         "context": "Editor",
         "bindings": {
@@ -68,7 +54,8 @@
             "cmd-shift-r": "debugger::Start",
             "cmd-.": "file_finder::Toggle",
             "cmd-r": "task::Spawn",
-            "cmd-'": "git::CheckoutBranch"
+            "cmd-'": "git::CheckoutBranch",
+            "cmd-\"": "git::Switch"
         },
     },
     {
@@ -100,6 +87,12 @@
         }
     },
     {
+        "context": "Terminal",
+        "bindings": {
+            "cmd-n": "workspace::NewTerminal"
+        }
+    },
+    {
         "context": "ProjectPanel",
         "unbind": {
             "cmd-d": "project_panel::Duplicate"
@@ -118,6 +111,37 @@
     {
         "unbind": {
             "shift-escape": "workspace::ToggleZoom"
+        }
+    },
+    {
+        "context": "Workspace",
+        "unbind": {
+            "cmd-t": "project_symbols::Toggle"
+        }
+    },
+    {
+        "bindings": {
+            "cmd-t": "text_finder::Toggle"
+        }
+    },
+    {
+        "bindings": {
+            "cmd-ctrl-left": "workspace::ActivatePaneLeft",
+            "cmd-ctrl-right": "workspace::ActivatePaneRight",
+            "cmd-ctrl-up": "workspace::ActivatePaneUp",
+            "cmd-ctrl-down": "workspace::ActivatePaneDown"
+        }
+    },
+    {
+        "bindings": {
+            "alt-]": "editor::GoToHunk",
+            "alt-[": "editor::GoToPreviousHunk"
+        }
+    },
+    {
+        "context": "GitPanel",
+        "bindings": {
+            "alt-enter": "git::ViewFile"
         }
     }
 ]

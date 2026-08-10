@@ -1,14 +1,33 @@
 {
+    "show_completions_on_input": true,
+    "minimap": {
+        "show": "never"
+    },
+    "minimum_split_diff_width": 100.0,
+    "agent_ui_font_size": 14.0,
+    "session": {
+        "trust_all_worktrees": true
+    },
+    "default_open_behavior": "new_window",
+    "redact_private_values": false,
     "on_last_window_closed": "quit_app",
     "use_system_path_prompts": false,
     "use_system_prompts": false,
-    "agent_buffer_font_size": 13.0,
-    "ui_font_weight": 400.0,
+    "agent_buffer_font_size": 12.0,
+    "ui_font_weight": 300.0,
     "cli_default_open_behavior": "new_window",
     "proxy": "",
     "agent_servers": {
         "claude-acp": {
+            "favorite_config_option_values": {
+                "model": [
+                    "claude-opus-4-7[1m]",
+                    "sonnet",
+                    "opus"
+                ]
+            },
             "default_config_options": {
+                "model": "opus",
                 "mode": "bypassPermissions",
                 "effort": "high"
             },
@@ -20,6 +39,10 @@
         "allowed": false,
     },
     "git": {
+        "enable_status": true,
+        "inline_blame": {
+            "show_commit_summary": false
+        },
         "path_style": "file_name_first",
     },
     "use_system_window_tabs": true,
@@ -32,6 +55,8 @@
     },
     "restore_on_startup": "launchpad",
     "git_panel": {
+        "group_by": "staging",
+        "sort_by": "path",
         "dock": "right",
         "sort_by_path": true,
         "scrollbar": {
@@ -44,24 +69,29 @@
     "vertical_scroll_margin": 100.0,
     "autosave": {
         "after_delay": {
-            "milliseconds": 1000,
+            "milliseconds": 250,
         },
     },
     "vim": {
         "cursor_shape": {
-            "insert": "bar",
+            "insert": "bar"
         },
         "toggle_relative_line_numbers": false,
     },
     "notification_panel": {
         "button": false,
     },
-    "show_edit_predictions": false,
+    "show_edit_predictions": true,
     "edit_predictions": {
+        "open_ai_compatible_api": {
+            "model": "claude-sonnet-4.6",
+            "api_url": "http://localhost:4000"
+        },
         "allow_data_collection": "no",
-        "provider": "none"
+        "provider": "zed"
     },
     "title_bar": {
+        "show_sign_in": false,
         "show_user_picture": false,
         "show_user_menu": true,
     },
@@ -85,7 +115,7 @@
         "show": false,
     },
     "when_closing_with_no_tabs": "keep_window_open",
-    "cursor_shape": "block",
+    "cursor_shape": "bar",
     "buffer_line_height": "comfortable",
     "icon_theme": "Zed (Default)",
     "outline_panel": {
@@ -103,13 +133,19 @@
         "button": true,
     },
     "terminal": {
+        "cursor_shape": "bar",
+        "flexible": true,
+        "font_family": "Berkeley Mono",
         "dock": "bottom",
         "toolbar": {
             "breadcrumbs": false,
         },
-        "font_weight": 250.0,
-        "font_size": 13.0,
+        "font_weight": 200.0,
+        "font_size": 12.0,
         "button": true,
+        "line_height": {
+            "custom": 1.2
+        }
     },
     "status_bar": {
         "cursor_position_button": false,
@@ -133,11 +169,18 @@
         "hide_hidden": false,
     },
     "which_key": {
-        "delay_ms": 500,
+        "delay_ms": 0,
         "enabled": true,
     },
     "agent": {
-        "expand_terminal_card": true,
+        "message_editor_min_lines": 4,
+        "inline_assistant_model": {
+            "provider": "litellm",
+            "model": "claude-sonnet",
+            "enable_thinking": false
+        },
+        "show_turn_stats": true,
+        "expand_terminal_card": false,
         "expand_edit_card": true,
         "max_content_width": 700.0,
         "new_thread_location": "local_project",
@@ -158,24 +201,22 @@
                 },
             },
         },
-        "show_turn_stats": true,
         "default_model": {
-            "effort": "high",
-            "provider": "anthropic",
-            "model": "claude-sonnet-4-6-latest",
-            "enable_thinking": true,
+            "provider": "litellm",
+            "model": "claude-sonnet",
+            "enable_thinking": false,
         },
         "dock": "left",
         "model_parameters": [],
     },
     "relative_line_numbers": "disabled",
-    "base_keymap": "VSCode",
+    "base_keymap": "Emacs",
     "theme": {
         "mode": "system",
         "light": "Vercel Light",
         "dark": "Vercel Dark",
     },
-    "vim_mode": true,
+    "vim_mode": false,
     "enable_language_server": true,
     "telemetry": {
         "diagnostics": false,
@@ -190,6 +231,23 @@
     "tab_size": 4,
     "hard_tabs": false,
     "language_models": {
+        "openai_compatible": {
+            "litellm": {
+                "api_url": "http://localhost:4000",
+                "available_models": [
+                    {
+                        "name": "claude-sonnet",
+                        "display_name": "Claude Sonnet (Vertex)",
+                        "max_tokens": 200000,
+                    },
+                    {
+                        "name": "claude-opus",
+                        "display_name": "Claude Opus (Vertex)",
+                        "max_tokens": 200000,
+                    },
+                ],
+            },
+        },
         "ollama": {
             "api_url": "http://localhost:11434",
             "auto_discover": true,
