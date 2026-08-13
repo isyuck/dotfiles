@@ -16,6 +16,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export GLAB_PAGER=cat
 
 plugins=(
+    bgnotify
+    chezmoi
     git
     copypath
     fzf
