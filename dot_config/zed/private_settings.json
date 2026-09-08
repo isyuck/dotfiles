@@ -93,6 +93,7 @@
         "provider": "zed"
     },
     "title_bar": {
+        "show_worktree_name": false,
         "show_sign_in": false,
         "show_user_picture": false,
         "show_user_menu": true,
