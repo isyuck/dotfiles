@@ -1,4 +1,17 @@
 {
+    "focus_follows_mouse": {
+        "enabled": false
+    },
+    "scrollbar": {
+        "search_results": true
+    },
+    "gutter": {
+        "line_numbers": false
+    },
+    "centered_layout": {
+        "right_padding": 0.1,
+        "left_padding": 0.1
+    },
     "buffer_font_weight": 400.0,
     "fullscreen_mode": "native",
     "show_completions_on_input": true,
@@ -41,6 +54,7 @@
         "allowed": false,
     },
     "git": {
+        "hunk_style": "unstaged_hollow",
         "enable_status": true,
         "inline_blame": {
             "show_commit_summary": false
@@ -55,6 +69,7 @@
     "preview_tabs": {
         "enabled": true,
     },
+    "bottom_dock_layout": "contained",
     "restore_on_startup": "launchpad",
     "git_panel": {
         "group_by": "staging",
@@ -83,20 +98,15 @@
     "notification_panel": {
         "button": false,
     },
-    "show_edit_predictions": true,
-    "edit_predictions": {
-        "open_ai_compatible_api": {
-            "model": "claude-sonnet-4.6",
-            "api_url": "http://localhost:4000"
-        },
-        "allow_data_collection": "no",
-        "provider": "zed"
-    },
+    "show_edit_predictions": false,
     "title_bar": {
+        "show_branch_status_icon": true,
         "show_worktree_name": false,
         "show_sign_in": false,
         "show_user_picture": false,
-        "show_user_menu": true,
+        "show_user_menu": false,
+        "show_onboarding_banner": false,
+        "show_project_items": true
     },
     "toolbar": {
         "breadcrumbs": true,
@@ -153,6 +163,7 @@
     "status_bar": {
         "cursor_position_button": false,
         "active_language_button": true,
+        "experimental.show": false
     },
     "project_panel": {
         "git_status_indicator": true,
