@@ -1,4 +1,6 @@
 {
+    "buffer_font_weight": 400.0,
+    "fullscreen_mode": "native",
     "show_completions_on_input": true,
     "minimap": {
         "show": "never"
@@ -15,7 +17,7 @@
     "use_system_prompts": false,
     "agent_buffer_font_size": 12.0,
     "ui_font_weight": 300.0,
-    "cli_default_open_behavior": "new_window",
+    "cli_default_open_behavior": "existing_window",
     "proxy": "",
     "agent_servers": {
         "claude-acp": {
@@ -66,7 +68,7 @@
         "tree_view": true,
     },
     "inline_code_actions": false,
-    "vertical_scroll_margin": 100.0,
+    "vertical_scroll_margin": 25.0,
     "autosave": {
         "after_delay": {
             "milliseconds": 250,
@@ -173,6 +175,7 @@
         "enabled": true,
     },
     "agent": {
+        "notify_when_agent_waiting": "never",
         "message_editor_min_lines": 4,
         "inline_assistant_model": {
             "provider": "litellm",
@@ -226,7 +229,7 @@
     "ui_font_family": "Berkeley Mono",
     "buffer_font_size": 12.0,
     "buffer_font_family": "Berkeley Mono",
-    "format_on_save": "on",
+    "format_on_save": "off",
     "formatter": "auto",
     "tab_size": 4,
     "hard_tabs": false,
