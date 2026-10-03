@@ -1,4 +1,8 @@
 {
+    "code_lens": "on",
+    "edit_predictions": {
+        "allow_data_collection": "default"
+    },
     "focus_follows_mouse": {
         "enabled": false
     },
@@ -19,7 +23,7 @@
         "show": "never"
     },
     "minimum_split_diff_width": 100.0,
-    "agent_ui_font_size": 14.0,
+    "agent_ui_font_size": 15.0,
     "session": {
         "trust_all_worktrees": true
     },
@@ -44,7 +48,7 @@
             "default_config_options": {
                 "model": "opus",
                 "mode": "bypassPermissions",
-                "effort": "high"
+                "effort": "max"
             },
             "type": "registry"
         }
@@ -74,7 +78,7 @@
     "git_panel": {
         "group_by": "staging",
         "sort_by": "path",
-        "dock": "right",
+        "dock": "left",
         "sort_by_path": true,
         "scrollbar": {
             "show": "auto",
@@ -166,9 +170,10 @@
         "experimental.show": false
     },
     "project_panel": {
+        "folder_indicator": "icon",
         "git_status_indicator": true,
         "hide_gitignore": false,
-        "dock": "right",
+        "dock": "left",
         "hide_root": true,
         "sticky_scroll": true,
         "scrollbar": {
@@ -176,7 +181,6 @@
         },
         "indent_size": 16.0,
         "git_status": true,
-        "folder_icons": true,
         "file_icons": true,
         "entry_spacing": "standard",
         "button": true,
@@ -188,7 +192,7 @@
     },
     "agent": {
         "notify_when_agent_waiting": "never",
-        "message_editor_min_lines": 4,
+        "message_editor_min_lines": 3,
         "inline_assistant_model": {
             "provider": "litellm",
             "model": "claude-sonnet",
@@ -221,7 +225,7 @@
             "model": "claude-sonnet",
             "enable_thinking": false,
         },
-        "dock": "left",
+        "dock": "right",
         "model_parameters": [],
     },
     "relative_line_numbers": "disabled",

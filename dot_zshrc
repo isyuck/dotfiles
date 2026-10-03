@@ -2,7 +2,11 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/Users/iw/.opencode/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
+nvm() {
+    unfunction nvm
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+    nvm "$@"
+}
 
 export HOMEBREW_NO_ENV_HINTS=1
 
@@ -22,7 +26,6 @@ plugins=(
     copypath
     fzf
     npm
-    nvm
     rust
     stack
     screen
@@ -62,26 +65,30 @@ alias darkbg="osascript -e 'tell application \"System Events\" to set picture of
 
 fpath+=~/.zfunc
 
-autoload -U compinit; compinit
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+    compinit
 else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+    compinit -C
+fi
+
+# >>> conda initialize >>> (lazy-loaded)
+conda() {
+    unfunction conda
+    __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    elif [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/opt/anaconda3/etc/profile.d/conda.sh"
     else
         export PATH="/opt/anaconda3/bin:$PATH"
     fi
-fi
-unset __conda_setup
+    unset __conda_setup
+    conda "$@"
+}
 # <<< conda initialize <<<
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
