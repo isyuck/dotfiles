@@ -97,6 +97,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 
-source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+[[ -f /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc ]] && source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
 
 bindkey -e
